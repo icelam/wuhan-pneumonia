@@ -1,0 +1,54 @@
+@import '~@style/_colors';
+@import '~@style/_variables';
+
+@keyframes spinner_animation {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+.loading {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2.5em 2em;
+  box-sizing: border-box;
+
+  @media #{$mobile} {
+    padding: 1.25em 1em;
+  }
+
+  &__spinner {
+    display: inline-block;
+    position: relative;
+    width: 2em;
+    height: 2em;
+
+    & div {
+      transform-origin: 1em 1em;
+      animation: spinner_animation 1.2s linear infinite;
+    }
+
+    & div:after {
+      content: " ";
+      display: block;
+      position: absolute;
+      width: 0.3125em;
+      height: 0.3125em;
+      border-radius: 50%;
+      background: $color-loading-spinner;
+    }
+
+    @for $i from 1 through 12 {
+      & div:nth-child(#{$i}) {
+        transform: rotate((($i - 1) * 30deg));
+        animation-delay: ((12 - $i) / 10) * -1s;
+      }
+    }
+  }
+}

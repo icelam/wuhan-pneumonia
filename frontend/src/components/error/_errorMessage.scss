@@ -1,0 +1,13 @@
+@import '~@style/_colors';
+
+.error-message {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+
+  p {
+    color: $color-secondary-text;
+  }
+}

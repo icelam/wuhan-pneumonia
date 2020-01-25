@@ -1,0 +1,20 @@
+@import '~@style/_colors';
+
+.data-table {
+  width: 100%;
+  display: table;
+  color: $color-table-text;
+
+  &__row {
+    display: table-row;
+    &:nth-child(odd) {
+      background-color: $color-white-red;
+    }
+  }
+
+  &__cell {
+    display: table-cell;
+    padding: 0.5rem 0.725rem;
+    min-width: 3rem;
+  }
+}

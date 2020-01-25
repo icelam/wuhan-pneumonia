@@ -1,0 +1,2 @@
+RewriteEngine on
+RewriteRule ^live-data$ index.php [QSA]

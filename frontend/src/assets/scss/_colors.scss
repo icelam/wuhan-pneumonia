@@ -1,0 +1,39 @@
+$color-white: #ffffff;
+$color-black: #000000;
+
+$color-light-grey: #f0f1f3;
+$color-mid-grey: #959595;
+$color-grey: #2d2d2d;
+
+$color-red: #d54334;
+$color-light-red: #cc4c4a;
+$color-white-red: #fff8f7;
+
+$color-yellow: #f8d691;
+$color-green: #32cf95;
+
+// body
+$color-body-background: $color-light-grey;
+$color-text: $color-grey;
+$color-secondary-text: $color-mid-grey;
+
+// Header
+$color-header-background: $color-red;
+
+// Component - Loading
+$color-loading-spinner: rgba($color-grey, 0.4);
+
+// Component - Card
+$color-card-text: $color-grey;
+$color-card-background: $color-white;
+$color-card-shadow: rgba($color-black, 0.085);
+
+// Component - Table
+$color-table-text: $color-red;
+$color-table-odd-background: $color-white-red;
+
+// Component - Statistics
+$color-statistic-red: $color-light-red;
+$color-statistic-yellow: $color-yellow;
+$color-statistic-green: $color-green;
+$color-statistic-grey: $color-grey;

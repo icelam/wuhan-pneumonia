@@ -1,0 +1,27 @@
+@import '~@style/_variables';
+
+.map-card .column {
+  max-height: 440px;
+  overflow: auto;
+
+  &--40 {
+    padding: 0;
+  }
+}
+
+.data-map {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media #{$mobileTablet} {
+  .map-card .column {
+    max-height: initial;
+
+    &--60 {
+      margin-bottom: 1rem;
+    }
+  }
+}

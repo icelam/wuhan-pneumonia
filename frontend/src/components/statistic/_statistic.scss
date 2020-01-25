@@ -1,0 +1,43 @@
+@import '~@style/_colors';
+@import '~@style/_variables';
+
+.statistic {
+  font-size: 1.25rem;
+  color: $color-secondary-text;
+  text-align: center;
+  padding: 1.125rem 1rem;
+
+  &__number {
+    font-size: 2.25rem;
+    line-height: 1em;
+    margin: 0.4375rem 0 0.8125rem 0;
+
+    &--red {
+      color: $color-statistic-red;
+    }
+
+    &--yellow {
+      color: $color-statistic-yellow;
+    }
+
+    &--green {
+      color: $color-statistic-green;
+    }
+
+    &--grey {
+      color: $color-statistic-grey;
+    }
+  }
+}
+
+@media #{$mobileTablet} {
+  .statistic {
+    font-size: 1rem;
+
+    &__number {
+      display: inline-block;
+      margin: 0;
+      font-size: 1.5rem;
+    }
+  }
+}

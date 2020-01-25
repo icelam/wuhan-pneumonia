@@ -1,0 +1,27 @@
+.row {
+  flex: auto;
+  display: flex;
+  flex-direction: row;
+  margin: 0 -0.5rem;
+}
+
+.column {
+  box-sizing: border-box;
+  align-content: stretch;
+  padding: 0 0.5rem;
+
+  $max: 100;
+  $step: 5;
+  @for $i from 0 through ($max/$step) {
+    $width: $i * $step;
+    &--#{$width} {
+      flex: 0 0 $width + 0%
+    }
+  }
+}
+
+@media #{$mobileTablet} {
+  .row {
+    display: block;
+  }
+}

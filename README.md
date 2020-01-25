@@ -8,3 +8,5 @@
 
 # Developemnt Notes #
 * [See Documentation](docs/DEVELOPMENT_NOTES.md)
+* [References](docs/REFERENCES.md)
+* [Roadmap](docs/ROADMAP.md)

@@ -3,7 +3,6 @@
   display: flex;
   flex-direction: row;
   margin: 0 -0.5rem;
-  flex-wrap: wrap;
 }
 
 .column {
@@ -16,21 +15,21 @@
   @for $i from 0 through ($max/$step) {
     $width: $i * $step;
     &--#{$width} {
-      flex: 0 0 $width + 0%
+      flex: 0 1 $width + 0%
     }
   }
 }
 
 @media #{$mobileTablet} {
   .column {
-    flex: 0 0 100%;
+    flex: 0 1 100%;
 
     $max: 100;
     $step: 5;
     @for $i from 0 through ($max/$step) {
       $width: $i * $step;
       &--#{$width} {
-        flex: 0 0 100%
+        flex: 0 1 100%
       }
     }
   }

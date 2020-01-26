@@ -8,6 +8,14 @@
   box-shadow: $color-card-shadow 0 0.0625rem 0.5rem 0;
   border-radius: 0.5rem;
 
+  .row {
+    margin: 0 -1rem;
+  }
+
+  .column {
+    padding: 0 1rem;
+  }
+
   &--bottom-gutter {
     margin-bottom: 1rem;
   }

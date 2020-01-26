@@ -2,6 +2,7 @@
 
 .prevention-method {
   .row {
+    flex-wrap: wrap;
     align-items: flex-end;
   }
 
@@ -25,7 +26,7 @@
 
 @media #{$smallerScreen} {
   .column {
-    flex: 0 0 100%;
+    flex: 0 1 100%;
   }
 
   .prevention-method{

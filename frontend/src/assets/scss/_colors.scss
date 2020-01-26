@@ -3,6 +3,7 @@ $color-black: #000000;
 
 $color-light-grey: #f0f1f3;
 $color-mid-grey: #959595;
+$color-mid-dark-grey: #4f4f4f;
 $color-grey: #2d2d2d;
 
 $color-red: #d54334;
@@ -19,6 +20,10 @@ $color-secondary-text: $color-mid-grey;
 
 // Header
 $color-header-background: $color-red;
+
+// ul, ol
+$color-list-bullet: $color-red;
+$color-list-text: $color-mid-dark-grey;
 
 // Component - Loading
 $color-loading-spinner: rgba($color-grey, 0.4);

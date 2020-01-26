@@ -1,11 +1,17 @@
 @import '~@style/_variables';
 
-.map-card .column {
-  max-height: 440px;
-  overflow: auto;
+.map-card {
+  .row {
+    margin: 0 -1rem;
+  }
 
-  &--40 {
-    padding: 0;
+ .column {
+    max-height: 440px;
+    overflow: auto;
+
+    &--40 {
+      padding: 0;
+    }
   }
 }
 

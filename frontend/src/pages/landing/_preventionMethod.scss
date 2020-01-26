@@ -1,0 +1,49 @@
+@import '~@style/_variables';
+
+.prevention-method {
+  .row {
+    align-items: flex-end;
+  }
+
+  .column h4 {
+    margin: 2em 0 1em 0;
+  }
+
+  .remarks {
+    margin-top: 2.5rem;
+    line-height: 1.5em;
+  }
+
+  &__visual {
+    text-align: center;
+    img {
+      width: 100%;
+      margin: 2.5rem 0 0 0;
+    }
+  }
+}
+
+@media #{$smallerScreen} {
+  .column {
+    flex: 0 0 100%;
+  }
+
+  .prevention-method{
+    &__block1 {
+      order: 2;
+    }
+
+    &__block2 {
+      order: 3;
+    }
+
+    &__visual {
+      order: 1;
+
+      img {
+        margin: 0 0 2.5rem 0;
+        max-width: 500px;
+      }
+    }
+  }
+}

@@ -28,6 +28,17 @@ a {
   &:focus,
   &:active {
     color: inherit;
+    text-decoration: underline;
+  }
+}
+
+ul, ol {
+  padding: 0 0 0 1.75em;
+  margin: 0;
+  color: $color-list-bullet;
+
+  span {
+    color: $color-list-text;
   }
 }
 

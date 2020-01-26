@@ -12,6 +12,9 @@ $screen-xxl: 1600px;
 $mobile: "only screen and (max-width: #{$screen-sm - 1})";
 $tablet: "only screen and (min-width: #{$screen-sm}) and (max-width: #{$screen-md - 1})";
 $desktop: "only screen and (min-width: #{$screen-md})";
+$smallerScreen: "only screen and (max-width: #{$screen-lg - 1})";
+$largerScreen: "only screen and (min-width: #{$screen-lg}px)";
+$extraLargeScreen: "only screen and (min-width: #{$screen-xl}px)";
 $tabletDesktop: "only screen and (min-width: #{$screen-sm})";
 $mobileTablet: "only screen and (max-width: #{$screen-md - 1})";
 

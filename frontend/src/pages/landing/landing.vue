@@ -1,12 +1,19 @@
 <template>
   <div v-if="pageReady">
+    <!-- Statistics -->
     <h2>中國及港澳台地區數據統計</h2>
     <statisticCard :virusSummary="virusSummary" />
+    <!-- /Statistics -->
 
     <!-- Map Section -->
     <h2>疫情地圖</h2>
     <map-card :provinceSummary="provinceSummary"/>
     <!-- /Map Section -->
+
+    <!-- Prevention Method -->
+    <h2>預防方法</h2>
+    <prevention-method/>
+    <!-- /Prevention Method -->
 
     <app-footer />
   </div>
@@ -26,6 +33,7 @@ import LiveDataService from '@services/live-data';
 
 import mapCard from './mapCard.vue';
 import statisticCard from './statisticCard.vue';
+import preventionMethod from './preventionMethod.vue';
 
 export default {
   components: {
@@ -33,7 +41,8 @@ export default {
     statisticCard,
     mapCard,
     appFooter,
-    errorMessage
+    errorMessage,
+    preventionMethod
   },
   data() {
     return {

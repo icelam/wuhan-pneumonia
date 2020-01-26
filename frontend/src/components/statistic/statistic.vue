@@ -1,5 +1,5 @@
 <template>
-  <card bottomGutter class="statistic">
+  <card class="statistic">
     <div :class="['statistic__number', `statistic__number--${cardColor}`]">
       {{count}}
     </div>

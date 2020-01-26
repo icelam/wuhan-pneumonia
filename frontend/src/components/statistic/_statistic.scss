@@ -33,11 +33,16 @@
 @media #{$mobileTablet} {
   .statistic {
     font-size: 1rem;
+    margin-bottom: 1rem;
 
     &__number {
       display: inline-block;
       margin: 0;
       font-size: 1.5rem;
     }
+  }
+
+  .column:last-child .statistic {
+    margin-bottom: 0;
   }
 }

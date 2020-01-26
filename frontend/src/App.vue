@@ -14,7 +14,7 @@ import { appHeader } from '@components';
 
 export default {
   components: {
-    appHeader,
+    appHeader
   },
   name: 'App'
 };

@@ -8,8 +8,13 @@
     "dev": "webpack-dev-server --open --config webpack/webpack.dev.conf.js",
     "lint": "./node_modules/.bin/eslint 'src/**/*.js'; exit 0;",
     "lint:entry": "./node_modules/.bin/eslint --no-ignore",
-    "first-release": "standard-version --commit-all --tag-prefix v --first-release",
-    "release": "standard-version --commit-all --tag-prefix v"
+    "first-release": "standard-version --commit-all --tag-prefix v --first-release --infile ../docs/CHANGELOG.md",
+    "release": "standard-version --commit-all --tag-prefix v --infile ../docs/CHANGELOG.md"
+  },
+  "standard-version": {
+    "scripts": {
+      "postchangelog": "replace 'bitbucket.org' 'github.com' ../docs/CHANGELOG.md"
+    }
   },
   "devDependencies": {
     "@babel/core": "^7.7.7",
@@ -42,6 +47,7 @@
     "node-sass": "^4.13.1",
     "postcss-loader": "^3.0.0",
     "prerender-spa-plugin": "^3.4.0",
+    "replace": "^1.1.5",
     "sass-loader": "^8.0.0",
     "standard-version": "^7.0.1",
     "style-loader": "^1.1.2",

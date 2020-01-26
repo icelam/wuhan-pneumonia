@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.2.0](https://github.com/icelam/wuhan-pneumonia/compare/v1.1.0...v1.2.0) (2020-01-26)
+
+
+### Features
+
+* **frontend:** Add prevention information ([d4ba0f3](https://github.com/icelam/wuhan-pneumonia/commit/d4ba0f3505e47ff98d48d3f7183ba16223769077))
+
 ## [1.1.0](https://github.com/icelam/wuhan-pneumonia/compare/v1.0.0...v1.1.0) (2020-01-26)
 
 

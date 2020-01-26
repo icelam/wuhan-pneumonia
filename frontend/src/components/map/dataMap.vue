@@ -30,10 +30,6 @@ export default {
         (p) => p.provinceName === d.properties.name
       );
 
-      // For old getStatisticsService use
-      // const provinceTags = (currentProvince.length && Array.isArray(currentProvince) && currentProvince[0].tags) || '';
-      // return extractStatistic(provinceTags);
-
       return (currentProvince.length && Array.isArray(currentProvince)
         ? currentProvince[0]
         : {
@@ -46,7 +42,7 @@ export default {
     },
     generateMap() {
       const chartColors = {
-        red: ['#cc4c4a', '#d66f70', '#e09492', '#ebb8b7', '#f5dcdd', '#fefcfc'],
+        red: ['#cc4c4a', '#d66f70', '#e09492', '#ebb8b7', '#f5dcdd'],
         yellow: '#fbf6e6',
         green: '#f8fdf5',
         white: '#ffffff',

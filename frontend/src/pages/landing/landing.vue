@@ -37,6 +37,7 @@ export default {
   },
   data() {
     return {
+      initFetch: true,
       pageReady: false,
       pageError: false,
       virusSummary: undefined,
@@ -51,12 +52,22 @@ export default {
         this.provinceSummary = getAreaStat;
         this.pageReady = true;
       }).catch(() => {
-        this.pageError = true;
+        if (this.initFetch) {
+          this.pageError = true;
+        }
+      }).finally(() => {
+        this.initFetch = false;
       });
     }
   },
   mounted() {
     this.getLiveData();
+    const autoFetchInterval = parseInt(process.env.VUE_APP_AUTO_FETCH_TIME, 10);
+
+    // Fetch new data every 5 minutes
+    setInterval(() => {
+      this.getLiveData();
+    }, autoFetchInterval);
   }
 };
 </script>

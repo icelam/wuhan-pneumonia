@@ -34,6 +34,11 @@ export default {
   },
   beforeMount() {
     this.provinceTableData = generateTableData(this.provinceSummary);
+  },
+  watch: {
+    provinceSummary() {
+      this.provinceTableData = generateTableData(this.provinceSummary);
+    }
   }
 };
 </script>

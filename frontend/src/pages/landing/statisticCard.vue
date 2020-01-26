@@ -40,6 +40,11 @@ export default {
   beforeMount() {
     this.statisticCount = extractStatistic(this.virusSummary.countRemark);
   },
+  watch: {
+    virusSummary() {
+      this.statisticCount = extractStatistic(this.virusSummary.countRemark);
+    }
+  },
   computed: {
     lastUpdate() {
       const { modifyTime } = this.virusSummary;

@@ -63,7 +63,8 @@ export default {
       const svg = d3.select('#whpMap')
         .attr('viewBox', `0 0 ${this.mapWidth} ${this.mapHeight}`);
 
-      const g = d3.create('svg:g');
+      const g = d3.create('svg:g')
+        .attr('id', 'mapGroup');
 
       // Zoom functions
       const zoom = d3.zoom()
@@ -358,6 +359,14 @@ export default {
   },
   mounted() {
     this.generateMap();
+  },
+  watch: {
+    provinceSummary() {
+      // Redraw map on props change
+      d3.select('#mapGroup').remove();
+      d3.select('#mapBackground').remove();
+      this.generateMap();
+    }
   }
 };
 </script>

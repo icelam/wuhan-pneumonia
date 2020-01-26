@@ -55,7 +55,15 @@ class scrapUtil {
         }
 
         $fp = fopen($this->store_folder . "/" . $this->store_filename, "w");
-        fwrite($fp, $api_output);
+        
+        // Lock file for writing
+        if (flock($fp, LOCK_EX)) {  
+          ftruncate($fp, 0);
+          fwrite($fp, $api_output);
+          fflush($fp);
+          flock($fp, LOCK_UN);
+        } 
+        
         fclose($fp);
 
         return $api_output;

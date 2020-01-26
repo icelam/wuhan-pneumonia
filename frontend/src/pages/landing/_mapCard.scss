@@ -27,3 +27,10 @@
     }
   }
 }
+
+// IE svg resize bug
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .map-card .column--60 {
+    overflow: hidden;
+  }
+}

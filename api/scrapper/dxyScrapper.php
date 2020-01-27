@@ -31,17 +31,18 @@ class dxyScrapper {
       // Extract data needed
       $getAreaStat = $this->jsonExtract("getAreaStat", $server_output);
       $getStatisticsService = $this->jsonExtract("getStatisticsService", $server_output);
-      $getTimelineService = $this->jsonExtract("getTimelineService", $server_output);
-      $getListByCountryTypeService1 = $this->jsonExtract("getListByCountryTypeService1", $server_output);
+      // $getTimelineService = $this->jsonExtract("getTimelineService", $server_output);
+      // $getListByCountryTypeService1 = $this->jsonExtract("getListByCountryTypeService1", $server_output);
 
-      if (!empty($getAreaStat) && !empty($getStatisticsService) && !empty($getTimelineService) && !empty($getListByCountryTypeService1)) {
+      // if (!empty($getAreaStat) && !empty($getStatisticsService) && !empty($getTimelineService) && !empty($getListByCountryTypeService1)) {
+      if (!empty($getAreaStat) && !empty($getStatisticsService)) {
         // Form api output
         $extracted_data = [
           "status" => $scrap_status_code,
           "getAreaStat" => $getAreaStat,
           "getStatisticsService" => $getStatisticsService,
-          "getTimelineService" => $getTimelineService,
-          "getListByCountryTypeService1" => $getListByCountryTypeService1,
+          // "getTimelineService" => $getTimelineService,
+          // "getListByCountryTypeService1" => $getListByCountryTypeService1,
         ];
 
         $api_output = json_encode($extracted_data);

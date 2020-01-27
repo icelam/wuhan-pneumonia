@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.3.0](https://github.com/icelam/wuhan-pneumonia/compare/v1.2.2...v1.3.0) (2020-01-27)
+
+
+### Features
+
+* **backend:** scrap historical data from QQ News ([3e89f39](https://github.com/icelam/wuhan-pneumonia/commit/3e89f39a8cadef011dfc131a513a2af82990bc27))
+* **frontend:** separate "Preventation Method" to another page ([82fdf1d](https://github.com/icelam/wuhan-pneumonia/commit/82fdf1daa5da6d84ef726fbb2e8232b6fdd6ad03))
+
+
+### Bug Fixes
+
+* **frontend:** clear interval on landing page unmount ([5f9d0ed](https://github.com/icelam/wuhan-pneumonia/commit/5f9d0ed161cdad03ac3813b6e63da5b17ebb919e))
+
 ### [1.2.2](https://github.com/icelam/wuhan-pneumonia/compare/v1.2.1...v1.2.2) (2020-01-27)
 
 

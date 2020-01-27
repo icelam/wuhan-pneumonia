@@ -16,7 +16,7 @@
 * Node >= 10
 
 ### Changing API Endpoint ###
-* You will need to host the `/api` folder yourself. Change the environment variable `VUE_APP_PNEUMONIA_DATA_SOURCE` to the url you are hosting.
+* You will need to host the `/api` folder yourself. Change the environment variable `VUE_APP_PNEUMONIA_LIVE_DATA` to the url you are hosting.
 
 ### Changing App Domain (Used for meta and open graph tags in HTML templates) ###
 * `.env` > `VUE_APP_DOMAIN`

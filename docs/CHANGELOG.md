@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.2.2](https://github.com/icelam/wuhan-pneumonia/compare/v1.2.1...v1.2.2) (2020-01-27)
+
+
+### Bug Fixes
+
+* **frontend:** fix column wrap issue in mobile ([66a284e](https://github.com/icelam/wuhan-pneumonia/commit/66a284e082de4ce969716fc03726445d78d0133d))
+* **frontend:** fix inconsistent section margin ([9dfdc75](https://github.com/icelam/wuhan-pneumonia/commit/9dfdc75b08386276f7114bd34e8d274f046b2f5d))
+
 ### [1.2.1](https://github.com/icelam/wuhan-pneumonia/compare/v1.2.0...v1.2.1) (2020-01-26)
 
 

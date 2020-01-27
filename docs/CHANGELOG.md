@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.4.0](https://github.com/icelam/wuhan-pneumonia/compare/v1.3.2...v1.4.0) (2020-01-27)
+
+
+### Features
+
+* **backend:** scrap overseas data from dxy ([f2fee28](https://github.com/icelam/wuhan-pneumonia/commit/f2fee28c89c4da64a058408cf23d5046b1d0e380))
+* **backend:** temp hack in dxy scrapper for old service workers ([d9bd2cc](https://github.com/icelam/wuhan-pneumonia/commit/d9bd2ccbe8a7a6c5e7699e3cd606f59e8139d866))
+* **frontend:** skipWaiting and clientsClaim for service worker ([b0d58ee](https://github.com/icelam/wuhan-pneumonia/commit/b0d58eec2bdb84cc9eb0a67b1d4f1610de7291e3))
+* **frontend:** update statistic variable due to changes on scrap data ([7a4827b](https://github.com/icelam/wuhan-pneumonia/commit/7a4827b0e0b16e6af7c3f18bd572e97dff6fe1b1))
+
 ### [1.3.2](https://github.com/icelam/wuhan-pneumonia/compare/v1.3.1...v1.3.2) (2020-01-27)
 
 

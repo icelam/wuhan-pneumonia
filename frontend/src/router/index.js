@@ -1,6 +1,6 @@
 import Router from 'vue-router';
 import Vue from 'vue';
-import landingPage from '@pages/landing/landing.vue';
+import landingPage from '@pages/landing/index.vue';
 import preventionMethodPage from '@pages/preventionMethod/index.vue';
 import { scrollElement } from '@utils';
 import routes from './routes';

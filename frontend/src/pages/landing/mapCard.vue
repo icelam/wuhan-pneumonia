@@ -13,7 +13,7 @@
 
 <script>
 import { card, dataMap, dataTable } from '@components';
-import { generateTableData } from '@utils';
+import { generateMapTableData } from '@utils';
 
 export default {
   components: {
@@ -33,11 +33,11 @@ export default {
     };
   },
   beforeMount() {
-    this.provinceTableData = generateTableData(this.provinceSummary);
+    this.provinceTableData = generateMapTableData(this.provinceSummary);
   },
   watch: {
     provinceSummary() {
-      this.provinceTableData = generateTableData(this.provinceSummary);
+      this.provinceTableData = generateMapTableData(this.provinceSummary);
     }
   }
 };

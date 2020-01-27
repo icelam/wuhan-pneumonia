@@ -1,3 +1,3 @@
-export { default as extractStatistic } from './data-extract';
-export { default as generateTableData } from './table-data-generate';
+export { default as extractDxyStatistic } from './data-extract';
+export { default as generateMapTableData } from './table-data-generate';
 export * from './format';

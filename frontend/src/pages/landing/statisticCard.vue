@@ -20,7 +20,7 @@
 
 <script>
 import { statistic } from '@components';
-import { extractStatistic, formatDate } from '@utils';
+import { extractDxyStatistic, formatDate } from '@utils';
 
 export default {
   components: {
@@ -38,11 +38,11 @@ export default {
     };
   },
   beforeMount() {
-    this.statisticCount = extractStatistic(this.virusSummary.countRemark);
+    this.statisticCount = extractDxyStatistic(this.virusSummary.countRemark);
   },
   watch: {
     virusSummary() {
-      this.statisticCount = extractStatistic(this.virusSummary.countRemark);
+      this.statisticCount = extractDxyStatistic(this.virusSummary.countRemark);
     }
   },
   computed: {

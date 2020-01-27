@@ -1,4 +1,4 @@
-const generateTableData = (data) => {
+const generateMapTableData = (data) => {
   if (!data) {
     return [];
   }
@@ -24,4 +24,4 @@ const generateTableData = (data) => {
   return tableData;
 };
 
-export default generateTableData;
+export default generateMapTableData;

@@ -37,6 +37,9 @@ class dxyScrapper {
 
       // if (!empty($getAreaStat) && !empty($getStatisticsService) && !empty($getTimelineService) && !empty($getListByCountryTypeService1)) {
       if (!empty($getAreaStat) && !empty($getStatisticsService) && !empty($getListByCountryTypeService2)) {
+        // Temp hack for old service workers
+        $getStatisticsService["countRemark"] = "確診 " . $getStatisticsService["confirmedCount"] . " 例，疑似 " . $getStatisticsService["suspectedCount"] . " 例，治癒 " . $getStatisticsService["curedCount"] . " 例，死亡 " . $getStatisticsService["deadCount"] . " 例";
+
         // Form api output
         $extracted_data = [
           "status" => $scrap_status_code,

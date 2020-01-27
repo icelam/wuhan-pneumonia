@@ -2,11 +2,12 @@ import Router from 'vue-router';
 import Vue from 'vue';
 import landingPage from '@pages/landing/landing.vue';
 import preventionMethodPage from '@pages/preventionMethod/index.vue';
+import { scrollElement } from '@utils';
 import routes from './routes';
 
 Vue.use(Router);
 
-export default new Router({
+const router = new Router({
   base: process.env.VUE_APP_CONTEXT,
   mode: 'history',
   linkExactActiveClass: 'nav__link--active',
@@ -28,3 +29,10 @@ export default new Router({
     }
   ]
 });
+
+router.afterEach(() => {
+  const mainContent = document.getElementById('content');
+  mainContent && scrollElement(mainContent, 0, 0);
+});
+
+export default router;

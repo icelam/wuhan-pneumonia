@@ -1,5 +1,5 @@
 import 'core-js/stable';
-import 'regenerator-runtime/runtime';
+import 'regenerator-runtime/runtime'; // eslint-disable-line import/no-extraneous-dependencies
 import 'core-js/es/map';
 import 'core-js/es/set';
 

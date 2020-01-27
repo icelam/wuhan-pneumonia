@@ -3,7 +3,7 @@
 require_once('vendor/autoload.php');
 use SteelyWing\Chinese\Chinese;
 
-class scrapUtil {
+class dxyScrapper {
   public function __construct() {
     $this->scrap_url = "https://3g.dxy.cn/newh5/view/pneumonia";
     $this->store_folder = 'scraps';
@@ -34,7 +34,7 @@ class scrapUtil {
       $getTimelineService = $this->jsonExtract("getTimelineService", $server_output);
       $getListByCountryTypeService1 = $this->jsonExtract("getListByCountryTypeService1", $server_output);
 
-      if (!empty($getAreaStat) && !empty($getStatisticsService) && !empty($getStatisticsService) && !empty($getListByCountryTypeService1)) {
+      if (!empty($getAreaStat) && !empty($getStatisticsService) && !empty($getTimelineService) && !empty($getListByCountryTypeService1)) {
         // Form api output
         $extracted_data = [
           "status" => $scrap_status_code,

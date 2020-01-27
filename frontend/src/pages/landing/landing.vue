@@ -50,7 +50,8 @@ export default {
       pageReady: false,
       pageError: false,
       virusSummary: undefined,
-      provinceSummary: undefined
+      provinceSummary: undefined,
+      getLiveDataInterval: undefined
     };
   },
   methods: {
@@ -74,9 +75,12 @@ export default {
     const autoFetchInterval = parseInt(process.env.VUE_APP_AUTO_FETCH_TIME, 10);
 
     // Fetch new data every 5 minutes
-    setInterval(() => {
+    this.getLiveDataInterval = setInterval(() => {
       this.getLiveData();
     }, autoFetchInterval);
+  },
+  beforeDestroy() {
+    clearInterval(this.getLiveDataInterval);
   }
 };
 </script>

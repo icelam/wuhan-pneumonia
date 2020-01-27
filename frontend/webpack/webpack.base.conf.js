@@ -30,8 +30,7 @@ module.exports = {
     new CleanWebpackPlugin(),
     new CopyWebpackPlugin([
       { from: Path.resolve(__dirname, '../src/assets/images'), to: 'assets/images', ignore: ['**/.DS_Store'] },
-      { from: Path.resolve(__dirname, '../src/manifest.json'), to: './' },
-      { from: Path.resolve(__dirname, '../.htaccess'), to: './' }
+      { from: Path.resolve(__dirname, '../src/manifest.json'), to: './' }
     ]),
     new VueLoaderPlugin(),
     new HtmlWebpackPlugin({

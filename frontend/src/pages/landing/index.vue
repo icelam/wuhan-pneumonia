@@ -1,12 +1,12 @@
 <template>
   <div v-if="pageReady">
     <!-- Statistics -->
-    <h2>中國及港澳台地區數據統計</h2>
-    <statisticCard :virusSummary="virusSummary" />
+    <h2>全球數據統計</h2>
+    <statisticCard :virusSummary="virusSummary" :overseasSummary="overseasSummary"/>
     <!-- /Statistics -->
 
     <!-- Map Section -->
-    <h2>疫情地圖</h2>
+    <h2>中國及港澳台地區疫情地圖</h2>
     <map-card :provinceSummary="provinceSummary"/>
     <!-- /Map Section -->
 
@@ -44,15 +44,17 @@ export default {
       pageError: false,
       virusSummary: undefined,
       provinceSummary: undefined,
+      overseasSummary: undefined,
       getLiveDataInterval: undefined
     };
   },
   methods: {
     getLiveData() {
       LiveDataService.getLiveData().then(({ data }) => {
-        const { getStatisticsService, getAreaStat } = data;
+        const { getStatisticsService, getAreaStat, getListByCountryTypeService2 } = data;
         this.virusSummary = getStatisticsService;
         this.provinceSummary = getAreaStat;
+        this.overseasSummary = getListByCountryTypeService2;
         this.pageReady = true;
       }).catch(() => {
         if (this.initFetch) {

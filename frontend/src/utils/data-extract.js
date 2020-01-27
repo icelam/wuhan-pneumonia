@@ -1,4 +1,4 @@
-const extractDxyStatistic = (str) => {
+export const extractDxyStatistic = (str) => {
   const confirmed = str.match(/確診\s?(\d+)\s?例/m);
   const suspected = str.match(/疑似\s?(\d+)\s?例/m);
   const cured = str.match(/治癒\s?(\d+)\s?例/m);
@@ -12,4 +12,4 @@ const extractDxyStatistic = (str) => {
   };
 };
 
-export default extractDxyStatistic;
+export const getOverseasSum = (data, key) => data.reduce((sum, p) => p[key] + sum, 0);

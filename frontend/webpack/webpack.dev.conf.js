@@ -41,7 +41,8 @@ module.exports = merge(baseWebpackConfig, {
     overlay: {
       warnings: false,
       errors: true
-    }
+    },
+    historyApiFallback: true
   },
   plugins: [
     new Webpack.DefinePlugin(clientEnv.stringified)

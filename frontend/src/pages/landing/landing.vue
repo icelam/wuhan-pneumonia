@@ -10,11 +10,6 @@
     <map-card :provinceSummary="provinceSummary"/>
     <!-- /Map Section -->
 
-    <!-- Prevention Method -->
-    <h2>預防方法</h2>
-    <prevention-method/>
-    <!-- /Prevention Method -->
-
     <app-footer />
   </div>
 
@@ -33,7 +28,6 @@ import LiveDataService from '@services/live-data';
 
 import mapCard from './mapCard.vue';
 import statisticCard from './statisticCard.vue';
-import preventionMethod from './preventionMethod.vue';
 
 export default {
   components: {
@@ -41,8 +35,7 @@ export default {
     statisticCard,
     mapCard,
     appFooter,
-    errorMessage,
-    preventionMethod
+    errorMessage
   },
   data() {
     return {

@@ -54,8 +54,8 @@ module.exports = merge(baseWebpackConfig, {
       }
     }),
     new WorkboxPlugin.GenerateSW({
-      clientsClaim: false,
-      skipWaiting: false,
+      clientsClaim: true,
+      skipWaiting: true,
       globIgnores: ['**/.DS_Store'],
       runtimeCaching: [
         {

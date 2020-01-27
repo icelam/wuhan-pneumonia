@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.3.1](https://github.com/icelam/wuhan-pneumonia/compare/v1.3.0...v1.3.1) (2020-01-27)
+
+
+### Bug Fixes
+
+* **frontend:** fix mobile navigation z-index ([fbec759](https://github.com/icelam/wuhan-pneumonia/commit/fbec759053b76c4abad914920e321e3067c73981))
+
 ## [1.3.0](https://github.com/icelam/wuhan-pneumonia/compare/v1.2.2...v1.3.0) (2020-01-27)
 
 

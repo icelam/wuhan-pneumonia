@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.3.2](https://github.com/icelam/wuhan-pneumonia/compare/v1.3.1...v1.3.2) (2020-01-27)
+
+
+### Bug Fixes
+
+* **frontend:** close mobile navigation when clicking logo ([83c1a2c](https://github.com/icelam/wuhan-pneumonia/commit/83c1a2ce66d007ae4a9bd280e23fcee604c68905))
+* **frontend:** scroll to top on route change ([e24d071](https://github.com/icelam/wuhan-pneumonia/commit/e24d071558ca0eb87f5fbeeed50846f3d2a2948d))
+* **frontend:** slower animation of navigation toggle ([f1ec60b](https://github.com/icelam/wuhan-pneumonia/commit/f1ec60bb611ea3286b2a097803e06bcdfcad3262))
+
 ### [1.3.1](https://github.com/icelam/wuhan-pneumonia/compare/v1.3.0...v1.3.1) (2020-01-27)
 
 

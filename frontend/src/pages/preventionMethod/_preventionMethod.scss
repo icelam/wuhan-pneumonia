@@ -15,6 +15,10 @@
   .remarks {
     margin-top: 2.5rem;
     line-height: 1.5em;
+
+    a {
+      word-break: break-all;
+    }
   }
 
   &__visual {

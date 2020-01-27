@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.5.0](https://github.com/icelam/wuhan-pneumonia/compare/v1.4.0...v1.5.0) (2020-01-27)
+
+
+### Features
+
+* **frontend:** switch to global statistics for "Statistic" section ([5e7c233](https://github.com/icelam/wuhan-pneumonia/commit/5e7c2336725173c8b03027728997def60a508c12))
+
+
+### Bug Fixes
+
+* **frontend:** wrap link for small screens on "Prevention Method" page ([49d23cd](https://github.com/icelam/wuhan-pneumonia/commit/49d23cdc738bbda7a504d34f2f4e6a28bce436a0))
+
 ## [1.4.0](https://github.com/icelam/wuhan-pneumonia/compare/v1.3.2...v1.4.0) (2020-01-27)
 
 

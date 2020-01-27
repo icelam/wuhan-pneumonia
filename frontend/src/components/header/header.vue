@@ -2,7 +2,7 @@
   <div class="header">
     <div class="container">
       <!-- Logo -->
-      <router-link :to="appRoutes.home">
+      <router-link :to="appRoutes.home" v-on:click.native="closeNav">
         <img src="~@images/logo/logo.svg" class="logo" alt="武漢肺炎感染即時資訊"/>
       </router-link>
       <!-- /Logo -->

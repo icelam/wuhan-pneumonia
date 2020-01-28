@@ -4,7 +4,8 @@
   "description": "新型冠狀病毒肺炎（武漢肺炎）感染即時資訊",
   "private": true,
   "scripts": {
-    "build": "webpack --config webpack/webpack.prod.conf.js  --colors && cp ./.htaccess ./dist/.htaccess",
+    "build": "webpack --config webpack/webpack.prod.conf.js  --colors",
+    "postbuild": "node ./scripts/post-build.js",
     "dev": "webpack-dev-server --open --config webpack/webpack.dev.conf.js",
     "lint": "./node_modules/.bin/eslint 'src/**/*.js'; exit 0;",
     "lint:entry": "./node_modules/.bin/eslint --no-ignore",
@@ -29,6 +30,7 @@
     "babel-plugin-transform-remove-debugger": "^6.9.4",
     "clean-webpack-plugin": "^3.0.0",
     "copy-webpack-plugin": "^5.1.1",
+    "cpx": "^1.5.0",
     "css-loader": "^3.4.1",
     "cssnano": "^4.1.10",
     "dotenv": "^8.2.0",

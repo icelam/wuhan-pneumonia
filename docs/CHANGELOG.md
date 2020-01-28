@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.8.0](https://github.com/icelam/wuhan-pneumonia/compare/v1.7.0...v1.8.0) (2020-01-28)
+
+
+### Features
+
+* **frontend:** add historical data table ([5d9f2ef](https://github.com/icelam/wuhan-pneumonia/commit/5d9f2ef497481b7ebe293cfbb0e6f5a9f0c6315b))
+
 ## [1.7.0](https://github.com/icelam/wuhan-pneumonia/compare/v1.6.0...v1.7.0) (2020-01-28)
 
 

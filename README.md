@@ -1,7 +1,6 @@
 # 新型冠狀病毒肺炎（武漢肺炎）感染即時資訊 #
 > 取得新型冠狀病毒肺炎（武漢肺炎）感染的確診、疑似、治癒及死亡案例數目。
 
-![Key Visual](frontend/src/assets/images/og/og-image.png)
 ![截圖](docs/screen.png)
 
 ### 資料來源 ###

@@ -1,6 +1,6 @@
 import Router from 'vue-router';
 import Vue from 'vue';
-import landingPage from '@pages/landing/index.vue';
+import liveDataPage from '@pages/liveData/index.vue';
 import preventionMethodPage from '@pages/preventionMethod/index.vue';
 import { scrollElement } from '@utils';
 import routes from './routes';
@@ -14,8 +14,8 @@ const router = new Router({
   routes: [
     {
       path: routes.home,
-      name: 'Landing Page',
-      component: landingPage
+      name: 'Live Data Page',
+      component: liveDataPage
     },
     {
       path: routes.preventionMethod,
@@ -25,7 +25,7 @@ const router = new Router({
     {
       path: '*',
       name: 'Not Found Page',
-      component: landingPage
+      component: liveDataPage
     }
   ]
 });

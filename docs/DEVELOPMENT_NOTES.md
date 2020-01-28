@@ -2,8 +2,8 @@
 ### Folder ###
 * `/api`
 
-### Tech stack ###
-* PHP > 5.6 (with Composer)
+### PHP version ###
+* PHP > 5.6 (with Composer installed)
 
 ### Install dependencies ###
 `php composer.phar install`
@@ -32,3 +32,10 @@ Go to `/frontend` folder and run the following command:
 ### Build production ###
 Go to `/frontend` folder and run the following command:
 * `npm run build`
+
+### Build destination ###
+* `dist`
+
+### Prerender Notes ###
+* API will need to set `Access-Control-Allow-Origin: http:localhost:8080` or `Access-Control-Allow-Origin: *` to allow prerender
+* To wait for API loading finish, prerender is set to capture HTML after `.page-content` is found

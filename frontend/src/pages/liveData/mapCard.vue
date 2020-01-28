@@ -4,8 +4,8 @@
       <div class="column column--60">
         <data-map :provinceSummary="provinceSummary"/>
       </div>
-      <div class="column column--40">
-        <data-table :tableData="provinceTableData"/>
+      <div class="column column--40 column--no-padding">
+        <data-table :tableData="provinceTableData" :cellAlignment="['left', 'left']"/>
       </div>
     </div>
   </card>
@@ -32,12 +32,17 @@ export default {
       provinceTableData: undefined
     };
   },
+  methods: {
+    formatTableData() {
+      this.provinceTableData = generateMapTableData(this.provinceSummary);
+    }
+  },
   beforeMount() {
-    this.provinceTableData = generateMapTableData(this.provinceSummary);
+    this.formatTableData();
   },
   watch: {
     provinceSummary() {
-      this.provinceTableData = generateMapTableData(this.provinceSummary);
+      this.formatTableData();
     }
   }
 };

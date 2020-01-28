@@ -5,16 +5,43 @@
   display: table;
   color: $color-table-text;
 
+  &__head {
+    display: table-row;
+    color: $color-table-head-text;
+    font-weight: bold;
+  }
+
   &__row {
     display: table-row;
-    &:nth-child(odd) {
-      background-color: $color-white-red;
-    }
   }
 
   &__cell {
     display: table-cell;
     padding: 0.5rem 0.75rem;
     min-width: 3rem;
+
+    &--left {
+      text-align: left;
+    }
+
+    &--center {
+      text-align: center;
+    }
+
+    &--right {
+      text-align: right;
+    }
+  }
+
+  &--odd-highlight {
+    .data-table__row:nth-child(odd) {
+      background-color: $color-white-red;
+    }
+  }
+
+  &--even-highlight {
+    .data-table__row:nth-child(even) {
+      background-color: $color-white-red;
+    }
   }
 }

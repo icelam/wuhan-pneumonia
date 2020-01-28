@@ -1,4 +1,4 @@
-const generateMapTableData = (data) => {
+export const generateMapTableData = (data) => {
   if (!data) {
     return [];
   }
@@ -24,4 +24,26 @@ const generateMapTableData = (data) => {
   return tableData;
 };
 
-export default generateMapTableData;
+export const generateOverseasTableData = (data) => {
+  if (!data) {
+    return [];
+  }
+
+  const tableData = data.map((p) => {
+    const {
+      provinceName,
+      confirmedCount,
+      curedCount,
+      deadCount
+    } = p;
+
+    return [
+      provinceName,
+      confirmedCount,
+      curedCount,
+      deadCount
+    ];
+  });
+
+  return tableData;
+};

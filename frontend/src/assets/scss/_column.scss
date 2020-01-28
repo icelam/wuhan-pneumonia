@@ -10,6 +10,10 @@
   align-content: stretch;
   padding: 0 0.5rem;
 
+  &--no-padding {
+    padding: 0 !important;
+  }
+
   $max: 100;
   $step: 5;
   @for $i from 0 through ($max/$step) {

@@ -10,6 +10,11 @@
     <map-card :provinceSummary="provinceSummary"/>
     <!-- /Map Section -->
 
+    <!-- Overseas Section -->
+    <h2>海外感染數據</h2>
+    <overseas-table :overseasSummary="overseasSummary"/>
+    <!-- /Overseas Section -->
+
     <app-footer />
   </div>
 
@@ -28,12 +33,14 @@ import LiveDataService from '@services/live-data';
 
 import mapCard from './mapCard.vue';
 import statisticCard from './statisticCard.vue';
+import overseasTable from './overseasTable.vue';
 
 export default {
   components: {
     loading,
     statisticCard,
     mapCard,
+    overseasTable,
     appFooter,
     errorMessage
   },
@@ -67,9 +74,9 @@ export default {
   },
   mounted() {
     this.getLiveData();
-    const autoFetchInterval = parseInt(process.env.VUE_APP_AUTO_FETCH_TIME, 10);
 
     // Fetch new data every 5 minutes
+    const autoFetchInterval = parseInt(process.env.VUE_APP_AUTO_FETCH_TIME, 10);
     this.getLiveDataInterval = setInterval(() => {
       this.getLiveData();
     }, autoFetchInterval);

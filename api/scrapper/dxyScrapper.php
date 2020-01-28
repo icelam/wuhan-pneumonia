@@ -95,7 +95,10 @@ class dxyScrapper {
         // Convert to Traditional Chinese
         $chinese_convertor = new Chinese();
         $result = $chinese_convertor->to(Chinese::ZH_HANT, $match[1]);
-        return json_decode($result , true);
+
+        // Localized translation for 澳洲
+        $localizedResult = str_replace("澳大利亞", "澳洲", $result);
+        return json_decode($localizedResult , true);
       }  catch (Exception $e) {
         // Return non processed Simplified Chinese value
         return json_decode($match[1] , true);

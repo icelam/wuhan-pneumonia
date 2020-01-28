@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.8.1](https://github.com/icelam/wuhan-pneumonia/compare/v1.8.0...v1.8.1) (2020-01-28)
+
+
+### Bug Fixes
+
+* **frontend:** runtime caching in service worker for historical data API ([a64770c](https://github.com/icelam/wuhan-pneumonia/commit/a64770c1152a0c5eb7502452b78a7ce81d60e666))
+
 ## [1.8.0](https://github.com/icelam/wuhan-pneumonia/compare/v1.7.0...v1.8.0) (2020-01-28)
 
 

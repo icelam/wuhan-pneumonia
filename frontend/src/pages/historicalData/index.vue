@@ -60,9 +60,7 @@ export default {
         this.historicalTableData = generateHistoricalTableData(result);
         this.pageReady = true;
       }).catch(() => {
-        if (this.initFetch) {
-          this.pageError = true;
-        }
+        this.pageError = true;
       });
     }
   },

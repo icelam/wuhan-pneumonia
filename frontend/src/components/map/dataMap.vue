@@ -72,6 +72,12 @@ export default {
         .on('zoom', () => {
           const { transform } = d3.event;
           g.attr('transform', transform);
+        })
+        .filter(() => {
+          // Disable swipe when map is not zoomed for normal page scrolling
+          // Only working on iOS
+          const { type, touches } = d3.event;
+          return !(type === 'touchstart' && touches.length < 2 && d3.zoomTransform(svg.node()).k === 1);
         });
 
       // Reset zoom

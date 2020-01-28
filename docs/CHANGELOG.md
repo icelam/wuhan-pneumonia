@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.6.0](https://github.com/icelam/wuhan-pneumonia/compare/v1.5.0...v1.6.0) (2020-01-28)
+
+
+### Features
+
+* **forntend:** add overseas count summary ([d648de3](https://github.com/icelam/wuhan-pneumonia/commit/d648de358fea9f757b26a0f8e8bc20b9aa04d0a8))
+* **frontend:** disable swipe when map is not zoomed (iOS) ([fc72dfe](https://github.com/icelam/wuhan-pneumonia/commit/fc72dfebad747c285114c4bb3207214adbdc5fe0))
+* **frontend:** update legend and data range of map ([6984474](https://github.com/icelam/wuhan-pneumonia/commit/69844744ac442fbc560090db49af4f9cd8370992))
+
 ## [1.5.0](https://github.com/icelam/wuhan-pneumonia/compare/v1.4.0...v1.5.0) (2020-01-27)
 
 

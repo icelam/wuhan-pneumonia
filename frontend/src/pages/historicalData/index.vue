@@ -1,5 +1,5 @@
 <template>
-  <div v-if="pageReady">
+  <div class="page-content" v-if="pageReady">
     <!-- Historical Data -->
     <h2>中國及港澳台地區歷史數據</h2>
     <div class="remarks"><sup>*</sup>本資料表與即時數據並不是同一個來源，因此數據可能存在差異。數據只供參考。</div>
@@ -26,7 +26,13 @@
 </template>
 
 <script>
-import { card, dataTable, appFooter, loading, errorMessage } from '@components';
+import {
+  card,
+  dataTable,
+  appFooter,
+  loading,
+  errorMessage
+} from '@components';
 import { pneumoniaDataService } from '@services';
 import { generateHistoricalTableData } from '@utils';
 

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="page-content">
     <!-- Prevention Method -->
     <h2>預防方法</h2>
     <prevention-method/>

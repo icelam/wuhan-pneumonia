@@ -4,7 +4,7 @@ import liveDataPage from '@pages/liveData/index.vue';
 import historicalDataPage from '@pages/historicalData/index.vue';
 import preventionMethodPage from '@pages/preventionMethod/index.vue';
 import { scrollElement } from '@utils';
-import routes from './routes';
+import routes from './routes.json';
 
 Vue.use(Router);
 

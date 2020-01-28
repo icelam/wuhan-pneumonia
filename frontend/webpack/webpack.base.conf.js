@@ -27,7 +27,9 @@ module.exports = {
     }
   },
   plugins: [
-    new CleanWebpackPlugin(),
+    new CleanWebpackPlugin({
+      cleanOnceBeforeBuildPatterns: [Path.join(__dirname, '../dist/**/*')]
+    }),
     new CopyWebpackPlugin([
       { from: Path.resolve(__dirname, '../src/assets/images'), to: 'assets/images', ignore: ['**/.DS_Store'] },
       { from: Path.resolve(__dirname, '../src/manifest.json'), to: './' }
@@ -74,7 +76,7 @@ module.exports = {
         options: {
           limit: -1,
           name: 'assets/images/[ext]/[name].[hash:7].[ext]',
-          esModule: false, // to solve [object Module] url in html
+          esModule: false // to solve [object Module] url in html
         }
       },
       {

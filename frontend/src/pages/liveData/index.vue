@@ -1,5 +1,5 @@
 <template>
-  <div v-if="pageReady">
+  <div class="page-content" v-if="pageReady">
     <!-- Statistics -->
     <h2>全球數據統計</h2>
     <statisticCard :virusSummary="virusSummary" :overseasSummary="overseasSummary"/>

@@ -13,6 +13,10 @@ const cssnano = require('cssnano');
 
 const baseWebpackConfig = require('./webpack.base.conf');
 const getClientEnvironment = require('./utils/env');
+const routes = require('../src/router/routes.json');
+
+const Renderer = PrerenderSpaPlugin.PuppeteerRenderer;
+const prerenderPath = Object.keys(routes).map((key) => routes[key]);
 
 // https://github.com/bkeepers/dotenv#what-other-env-files-can-i-use
 const dotenvFiles = [
@@ -36,8 +40,10 @@ module.exports = merge(baseWebpackConfig, {
   stats: 'errors-only',
   bail: true,
   output: {
+    path: Path.join(__dirname, `../dist${process.env.VUE_APP_CONTEXT}`),
     filename: 'assets/js/[name].[chunkhash:8].js',
-    chunkFilename: 'assets/js/[name].[chunkhash:8].chunk.js'
+    chunkFilename: 'assets/js/[name].[chunkhash:8].chunk.js',
+    publicPath: process.env.VUE_APP_CONTEXT
   },
   plugins: [
     new Webpack.DefinePlugin(clientEnv.stringified),
@@ -47,7 +53,12 @@ module.exports = merge(baseWebpackConfig, {
     }),
     new PrerenderSpaPlugin({
       staticDir: Path.join(__dirname, '../dist'),
-      routes: ['/'],
+      indexPath: Path.join(__dirname, `../dist${process.env.VUE_APP_CONTEXT}index.html`),
+      outputDir: Path.join(__dirname, `../dist${process.env.VUE_APP_CONTEXT}`),
+      routes: prerenderPath,
+      renderer: new Renderer({
+        renderAfterElementExists: '.page-content'
+      }),
       postProcess(renderedRoute) {
         renderedRoute.html = renderedRoute.html.replace(/<script (.*?)src="(.*?)google(.*?)"(.*?)><\/script>/g, '');
         return renderedRoute;
@@ -66,7 +77,7 @@ module.exports = merge(baseWebpackConfig, {
     }),
     new BundleAnalyzerPlugin({
       analyzerMode: 'static',
-      reportFilename: '../bundle-analyzer-plugin-report.html'
+      reportFilename: Path.join(__dirname, '../bundle-analyzer-plugin-report.html')
     })
   ],
   module: {

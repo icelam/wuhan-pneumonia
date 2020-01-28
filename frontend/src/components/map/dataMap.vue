@@ -49,6 +49,9 @@ export default {
         darkRed: '#aa362a'
       };
 
+      // Scale: >= 1000, 500 - 999, 100 - 499, 10 - 99, 1 - 9
+      const scaleClass = [1000, 500, 100, 10, 1];
+
       const projection = geoMercator()
         .scale(550)
         .center([105, 38]) // lat, long as center
@@ -167,15 +170,18 @@ export default {
         .attr('fill', (d) => {
           const provinceStatistic = this.getProvinceStatistics(d);
 
-          if (provinceStatistic.confirmedCount > 0) {
+          if (provinceStatistic.confirmedCount >= scaleClass[4]) {
             const { red: redScale } = chartColors;
-            // Scale: >=100, 10 - 99, 1 - 9
             return (
-              provinceStatistic.confirmedCount >= 100
+              provinceStatistic.confirmedCount >= scaleClass[0]
                 ? redScale[0]
-                : provinceStatistic.confirmedCount >= 10
-                  ? redScale[2]
-                  : redScale[4]
+                : provinceStatistic.confirmedCount >= scaleClass[1]
+                  ? redScale[1]
+                  : provinceStatistic.confirmedCount >= scaleClass[2]
+                    ? redScale[2]
+                    : provinceStatistic.confirmedCount >= scaleClass[3]
+                      ? redScale[3]
+                      : redScale[4]
             );
           }
 
@@ -299,7 +305,7 @@ export default {
 
           // Change text color when province is filled with dark red
           // Except those label which have pointer line
-          return provinceStatistic.confirmedCount >= 10 && !smallProvinces.includes(id)
+          return provinceStatistic.confirmedCount >= scaleClass[2] && !smallProvinces.includes(id)
             ? chartColors.white
             : chartColors.darkRed;
         })
@@ -309,15 +315,23 @@ export default {
       const legendData = [
         {
           color: chartColors.red[0],
-          label: '>= 100'
+          label: `>= ${scaleClass[0]}`
+        },
+        {
+          color: chartColors.red[1],
+          label: `${scaleClass[1]} - ${scaleClass[0] - 1}`
         },
         {
           color: chartColors.red[2],
-          label: '10 - 99'
+          label: `${scaleClass[2]} - ${scaleClass[1] - 1}`
+        },
+        {
+          color: chartColors.red[3],
+          label: `${scaleClass[3]} - ${scaleClass[2] - 1}`
         },
         {
           color: chartColors.red[4],
-          label: '1 - 9'
+          label: `${scaleClass[4]} - ${scaleClass[3] - 1}`
         },
         {
           color: chartColors.yellow,
@@ -337,8 +351,8 @@ export default {
         .enter();
 
       legend.append('rect')
-        .attr('x', 550)
-        .attr('y', (d, i) => 400 + (20 * i))
+        .attr('x', 570)
+        .attr('y', (d, i) => 360 + (20 * i))
         .attr('width', 12)
         .attr('height', 12)
         .attr('stroke', chartColors.darkRed)
@@ -346,8 +360,8 @@ export default {
         .attr('fill', (d) => d.color);
 
       legend.append('text')
-        .attr('x', 570)
-        .attr('y', (d, i) => 408 + (20 * i))
+        .attr('x', 590)
+        .attr('y', (d, i) => 368 + (20 * i))
         .attr('font-size', 7)
         .attr('fill', chartColors.darkRed)
         .text((d) => d.label);

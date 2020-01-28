@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="remarks" v-if="lastUpdate">截至 {{lastUpdate}}</div>
+    <div class="remarks" v-if="lastUpdate">截至 {{lastUpdate}}{{overSeasCountRemarks}}</div>
     <div class="row">
       <div class="column column--25">
         <statistic :count="totalConfirmed" label="宗確診病例" cardColor="red" />
@@ -85,6 +85,28 @@ export default {
       return this.overseasCount
         ? this.virusSummary.deadCount + this.overseasCount.deadCount
         : this.virusSummary.deadCount;
+    },
+    overSeasCountRemarks() {
+      if (!this.overseasCount) {
+        return '';
+      }
+
+      const {
+        confirmedCount,
+        suspectedCount,
+        deadCount,
+        curedCount
+      } = this.overseasCount;
+
+      const summaryList = [];
+      confirmedCount && summaryList.push(`${confirmedCount} 宗確診病例`);
+      suspectedCount && summaryList.push(`${suspectedCount} 宗懷疑個案`);
+      curedCount && summaryList.push(`${curedCount} 宗治癒個案`);
+      deadCount && summaryList.push(`${deadCount} 宗死亡病例`);
+
+      const summaryString = summaryList.join('，');
+
+      return summaryString ? `，其中海外案例佔 ${summaryString}` : '';
     }
   }
 };

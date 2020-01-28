@@ -123,13 +123,13 @@ $strip_gap: 0.5rem;
   }
 }
 
-@media #{$tabletDesktop} {
+@media #{$desktop} {
   .hamburger {
     display: none;
   }
 }
 
-@media #{$mobile} {
+@media #{$mobileTablet} {
   .header {
     position: relative;
 
@@ -155,14 +155,19 @@ $strip_gap: 0.5rem;
     overflow: hidden;
     transition: height 0.3s ease;
 
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
     &--open {
-      height: 2.8125rem;
+      height: 3 * 2.8125rem; // height of nav__link = 2.8125rem
     }
 
     > li {
       display: inline-block;
       font-size: 1rem;
-      margin: 0.75rem;
+      padding: 0.75rem;
+      margin: 0;
 
       .nav__link {
         &:hover {

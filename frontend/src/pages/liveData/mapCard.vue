@@ -5,7 +5,7 @@
         <data-map :provinceSummary="provinceSummary"/>
       </div>
       <div class="column column--40 column--no-padding">
-        <data-table :tableData="provinceTableData" :cellAlignment="['left', 'left']"/>
+        <data-table class="map-table" :tableData="provinceTableData" :cellAlignment="['left', 'left']"/>
       </div>
     </div>
   </card>

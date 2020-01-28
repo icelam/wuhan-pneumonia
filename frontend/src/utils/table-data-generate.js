@@ -47,3 +47,35 @@ export const generateOverseasTableData = (data) => {
 
   return tableData;
 };
+
+export const generateHistoricalTableData = (data) => {
+  if (!data) {
+    return [];
+  }
+
+  const tableData = data.map((d) => {
+    const {
+      date,
+      confirm,
+      suspect,
+      heal,
+      dead
+    } = d;
+
+    // Format date
+    const datePart = date.split('.');
+    const formattedDate = datePart.length === 2
+      ? `${parseInt(datePart[0], 10)} 月 ${parseInt(datePart[1], 10)} 日`
+      : date;
+
+    return [
+      formattedDate,
+      confirm,
+      suspect,
+      heal,
+      dead
+    ];
+  });
+
+  return tableData;
+};

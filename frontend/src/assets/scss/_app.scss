@@ -64,6 +64,11 @@ ul, ol {
   .container {
     height: 100%;
   }
+
+  .loading,
+  .error-message {
+    height: 100%;
+  }
 }
 
 .remarks {

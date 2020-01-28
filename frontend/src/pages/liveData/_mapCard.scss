@@ -14,6 +14,14 @@
   align-items: center;
 }
 
+.map-table {
+  &::v-deep .data-table__cell {
+    &:first-of-type {
+      min-width: 3rem;
+    }
+  }
+}
+
 @media #{$mobileTablet} {
   .map-card .column {
     max-height: initial;

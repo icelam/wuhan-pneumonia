@@ -1,0 +1,22 @@
+@import '~@style/_variables';
+
+@media #{$tabletDesktop} {
+  .historical-table {
+    &::v-deep .data-table__cell {
+      &:first-of-type {
+        padding-left: 1.25rem;
+      }
+
+      &:last-of-type {
+        padding-right: 1.25rem;
+      }
+    }
+  }
+}
+
+@media #{$mobile} {
+  .historical-table {
+    font-size: 0.8125rem;
+  }
+}
+

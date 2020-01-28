@@ -15,7 +15,7 @@
     <overseas-table :overseasSummary="overseasSummary"/>
     <!-- /Overseas Section -->
 
-    <app-footer />
+    <app-footer sourceLink="https://3g.dxy.cn/newh5/view/pneumonia" sourceName="丁香醫生" autoFetch/>
   </div>
 
   <error-message message="無法取得最新資訊。" v-else-if="pageError" />
@@ -29,8 +29,7 @@ import {
   appFooter,
   errorMessage
 } from '@components';
-import LiveDataService from '@services/live-data';
-
+import { pneumoniaDataService } from '@services';
 import mapCard from './mapCard.vue';
 import statisticCard from './statisticCard.vue';
 import overseasTable from './overseasTable.vue';
@@ -57,7 +56,7 @@ export default {
   },
   methods: {
     getLiveData() {
-      LiveDataService.getLiveData().then(({ data }) => {
+      pneumoniaDataService.getLiveData().then(({ data }) => {
         const { getStatisticsService, getAreaStat, getListByCountryTypeService2 } = data;
         this.virusSummary = getStatisticsService;
         this.provinceSummary = getAreaStat;
@@ -86,11 +85,3 @@ export default {
   }
 };
 </script>
-
-<style lang='scss' scoped>
-  @import '~@style/_variables';
-
-  .loading, .error-message {
-    height: 100%;
-  }
-</style>

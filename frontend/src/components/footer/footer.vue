@@ -1,13 +1,32 @@
 <template>
   <div class="footer">
     <div class="remarks">
-      資料每 {{autoFetchMinutes}} 分鐘自動更新・資料來源：<a href="https://3g.dxy.cn/newh5/view/pneumonia" target="_blank" rel="noopener noreferrer">丁香醫生</a>
+      {{
+        autoFetch
+          ? `資料每 ${autoFetchMinutes} 分鐘自動更新・`
+          : ''
+      }}<!--
+      -->資料來源：<a :href="sourceLink" target="_blank" rel="noopener noreferrer">{{sourceName}}</a>
     </div>
   </div>
 </template>
 
 <script>
 export default {
+  props: {
+    sourceLink: {
+      type: String,
+      required: true
+    },
+    sourceName: {
+      type: String,
+      required: true
+    },
+    autoFetch: {
+      type: Boolean,
+      default: false
+    }
+  },
   data() {
     return {
       autoFetchMillSec: parseInt(process.env.VUE_APP_AUTO_FETCH_TIME, 10)

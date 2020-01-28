@@ -20,6 +20,15 @@
         </li>
         <li>
           <router-link
+            :to="appRoutes.historicalData"
+            v-on:click.native="closeNav"
+            class="nav__link"
+            >
+            過往數字
+          </router-link>
+        </li>
+        <li>
+          <router-link
             :to="appRoutes.preventionMethod"
             v-on:click.native="closeNav"
             class="nav__link"

@@ -59,7 +59,7 @@ module.exports = merge(baseWebpackConfig, {
       globIgnores: ['**/.DS_Store'],
       runtimeCaching: [
         {
-          urlPattern: /^https:\/\/pinkylam\.me\/playground\/wuhan-pneumonia\/api\/live-data*/,
+          urlPattern: /^https:\/\/pinkylam\.me\/playground\/wuhan-pneumonia\/api\/(live-data|historical-data)*/,
           handler: 'NetworkFirst'
         }
       ]

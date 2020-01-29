@@ -1,3 +1,5 @@
+@import '~@style/_variables';
+
 #rssFeedWall {
   height: 100%;
 }
@@ -8,4 +10,14 @@
 
 .rssapp-card-body {
   padding: 1rem;
+}
+
+@media #{$mobile} {
+  #rssFeedWall h2 {
+    padding: 0.25rem;
+  }
+
+  .news {
+    margin: -1rem  -0.75rem;
+  }
 }

@@ -1,5 +1,5 @@
 # Roadmap #
-* News page (https://news.google.com/rss/search?q=%E8%82%BA%E7%82%8E&hl=zh-HK&gl=HK&ceid=HK%3Azh-Hant)
+* Remove RSS app wall, use direct API so that component style can be customized
 * Refactor backend scrapper, identify common code
 * Refactor table card to component
 * Convert historical data table to line chart

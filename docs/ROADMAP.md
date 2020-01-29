@@ -1,4 +1,6 @@
 # Roadmap #
+* News page (https://news.google.com/rss/search?q=%E8%82%BA%E7%82%8E&hl=zh-HK&gl=HK&ceid=HK%3Azh-Hant)
+* Refactor backend scrapper, identify common code
 * Refactor table card to component
 * Convert historical data table to line chart
 * Convert AE waiting time data table to data map

@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.11.0](https://github.com/icelam/wuhan-pneumonia/compare/v1.10.0...v1.11.0) (2020-01-29)
+
+
+### Features
+
+* **backend:** google news rss to json ([7615c96](https://github.com/icelam/wuhan-pneumonia/commit/7615c96185f8b4d777a970b126a68efa25c0581a))
+* **frontend:** add "Related News" page ([58f93dd](https://github.com/icelam/wuhan-pneumonia/commit/58f93dd39a10a68b94613e14cb59d309685ae320))
+
 ## [1.10.0](https://github.com/icelam/wuhan-pneumonia/compare/v1.9.0...v1.10.0) (2020-01-29)
 
 

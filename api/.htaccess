@@ -3,4 +3,5 @@
   RewriteRule ^live-data$ live-data.php [QSA]
   RewriteRule ^historical-data$ historical-data.php [QSA]
   RewriteRule ^ae-data$ ae-data.php [QSA]
+  RewriteRule ^pharmacy-data$ pharmacy-data.php [QSA]
 </ifModule>

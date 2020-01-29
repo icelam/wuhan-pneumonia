@@ -17,6 +17,12 @@
 @media #{$mobile} {
   .ae-waiting-table {
     font-size: 0.8125rem;
+
+    &::v-deep .data-table__cell {
+      &:nth-child(2), &:nth-child(3) {
+        white-space: nowrap;
+      }
+    }
   }
 }
 

@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.10.0](https://github.com/icelam/wuhan-pneumonia/compare/v1.9.0...v1.10.0) (2020-01-29)
+
+
+### Features
+
+* **backend:** scrap blacklist pharmacy from google spreadsheet ([d22be49](https://github.com/icelam/wuhan-pneumonia/commit/d22be490be44b79d6bbadc6c94ae4967222b4540))
+* **frontend:** add fraudulent pharmacy list ([74b01ba](https://github.com/icelam/wuhan-pneumonia/commit/74b01bac1a1d0fd1a0fb52d8c0d805b311a0eaa8))
+
+
+### Bug Fixes
+
+* **frontend:** fix duplicated unit in media queries ([82b2116](https://github.com/icelam/wuhan-pneumonia/commit/82b2116da415467c9f16c3d219fa67dcbe8df88e))
+
 ## [1.9.0](https://github.com/icelam/wuhan-pneumonia/compare/v1.8.2...v1.9.0) (2020-01-29)
 
 

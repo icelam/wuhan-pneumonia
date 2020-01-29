@@ -33,7 +33,7 @@
             v-on:click.native="closeNav"
             class="nav__link"
             >
-            香港人自救專區
+            藥房黑名單
           </router-link>
         </li>
         <li>
@@ -43,6 +43,15 @@
             class="nav__link"
             >
             急症輪候
+          </router-link>
+        </li>
+        <li>
+          <router-link
+            :to="appRoutes.relatedNews"
+            v-on:click.native="closeNav"
+            class="nav__link"
+            >
+            新聞
           </router-link>
         </li>
         <li>

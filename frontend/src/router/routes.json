@@ -3,5 +3,6 @@
   "historicalData": "/historical-data",
   "preventionMethod": "/prevention-method",
   "aeWaitingTime": "/ae-waiting-time",
-  "hongKongInfo": "/hong-kong-information"
+  "hongKongInfo": "/hong-kong-information",
+  "relatedNews": "/related-news"
 }

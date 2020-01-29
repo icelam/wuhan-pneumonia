@@ -5,6 +5,7 @@ import historicalDataPage from '@pages/historicalData/index.vue';
 import preventionMethodPage from '@pages/preventionMethod/index.vue';
 import aeWaitingTimePage from '@pages/aeWaitingTime/index.vue';
 import hongKongInfoPage from '@pages/hongKongInfo/index.vue';
+import relatedNewsPage from '@pages/relatedNews/index.vue';
 import { scrollElement } from '@utils';
 import routes from './routes.json';
 
@@ -39,6 +40,11 @@ const router = new Router({
       path: routes.preventionMethod,
       name: 'Prevention Method Page',
       component: preventionMethodPage
+    },
+    {
+      path: routes.relatedNews,
+      name: 'Related News Page',
+      component: relatedNewsPage
     },
     {
       path: '*',

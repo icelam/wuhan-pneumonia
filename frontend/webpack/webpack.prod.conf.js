@@ -60,12 +60,15 @@ module.exports = merge(baseWebpackConfig, {
         renderAfterElementExists: '.page-content',
         args: [
           '--disable-web-security' // To solve CORS issue when rendering API
-        ]
-      }),
-      postProcess(renderedRoute) {
-        renderedRoute.html = renderedRoute.html.replace(/<script (.*?)src="(.*?)google(.*?)"(.*?)><\/script>/g, '');
-        return renderedRoute;
-      }
+        ],
+        inject: {
+          disableInPrerender: true
+        }
+      })
+      // postProcess(renderedRoute) {
+      //   renderedRoute.html = renderedRoute.html.replace(/<script (.*?)src="(.*?)google(.*?)"(.*?)><\/script>/g, '');
+      //   return renderedRoute;
+      // }
     }),
     new WorkboxPlugin.GenerateSW({
       clientsClaim: true,

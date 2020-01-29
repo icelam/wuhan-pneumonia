@@ -49,11 +49,29 @@
     <title>新型冠狀病毒肺炎（武漢肺炎）感染即時資訊</title>
 
     <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-T3V24LN');</script>
+    <script>
+      (function () { // eslint-disable-line wrap-iife, func-names
+        var initGTM = function (w, d, s, l, i) { // eslint-disable-line func-names, no-var
+          w[l] = w[l] || [];
+          w[l].push({
+            'gtm.start': new Date().getTime(),
+            event: 'gtm.js'
+          });
+          var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != 'dataLayer' ? '&l='
+            + l
+            : '';
+          j.async = true;
+          j.src = '//www.googletagmanager.com/gtm.js?id=' + i + dl;
+          f.parentNode.insertBefore(j, f);
+        };
+
+        if (window.__PRERENDER_INJECTED && window.__PRERENDER_INJECTED.disableInPrerender) {
+          return;
+        }
+
+        initGTM(window, document, 'script', 'dataLayer', 'GTM-T3V24LN');
+      })();
+    </script>
     <!-- End Google Tag Manager -->
   </head>
 

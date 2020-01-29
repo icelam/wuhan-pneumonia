@@ -19,7 +19,6 @@ class dxyScrapper {
       $server_output = curl_exec ($ch);
       $scrap_error = curl_error($ch);
       $scrap_status_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-      $scrap_length = curl_getinfo($ch, CURLINFO_CONTENT_LENGTH_DOWNLOAD);
       
       curl_close ($ch);
 

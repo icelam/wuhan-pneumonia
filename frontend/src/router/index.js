@@ -4,6 +4,7 @@ import liveDataPage from '@pages/liveData/index.vue';
 import historicalDataPage from '@pages/historicalData/index.vue';
 import preventionMethodPage from '@pages/preventionMethod/index.vue';
 import aeWaitingTimePage from '@pages/aeWaitingTime/index.vue';
+import hongKongInfoPage from '@pages/hongKongInfo/index.vue';
 import { scrollElement } from '@utils';
 import routes from './routes.json';
 
@@ -28,6 +29,11 @@ const router = new Router({
       path: routes.aeWaitingTime,
       name: 'AE Waiting Time Page',
       component: aeWaitingTimePage
+    },
+    {
+      path: routes.hongKongInfo,
+      name: 'Hong Kong Information Page',
+      component: hongKongInfoPage
     },
     {
       path: routes.preventionMethod,

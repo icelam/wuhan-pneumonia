@@ -29,11 +29,20 @@
         </li>
         <li>
           <router-link
+            :to="appRoutes.hongKongInfo"
+            v-on:click.native="closeNav"
+            class="nav__link"
+            >
+            香港人自救專區
+          </router-link>
+        </li>
+        <li>
+          <router-link
             :to="appRoutes.aeWaitingTime"
             v-on:click.native="closeNav"
             class="nav__link"
             >
-            急症室
+            急症輪候
           </router-link>
         </li>
         <li>

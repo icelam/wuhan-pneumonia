@@ -42,6 +42,16 @@ ul, ol {
   }
 }
 
+sup, sub {
+  vertical-align: baseline;
+  position: relative;
+  top: -0.4em;
+}
+
+sub {
+  top: 0.4em;
+}
+
 #app {
   height: 100%;
   display: flex;

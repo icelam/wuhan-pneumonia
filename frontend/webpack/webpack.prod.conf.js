@@ -57,7 +57,10 @@ module.exports = merge(baseWebpackConfig, {
       outputDir: Path.join(__dirname, `../dist${process.env.VUE_APP_CONTEXT}`),
       routes: prerenderPath,
       renderer: new Renderer({
-        renderAfterElementExists: '.page-content'
+        renderAfterElementExists: '.page-content',
+        args: [
+          '--disable-web-security' // To solve CORS issue when rendering API
+        ]
       }),
       postProcess(renderedRoute) {
         renderedRoute.html = renderedRoute.html.replace(/<script (.*?)src="(.*?)google(.*?)"(.*?)><\/script>/g, '');

@@ -2,4 +2,5 @@
   RewriteEngine on
   RewriteRule ^live-data$ live-data.php [QSA]
   RewriteRule ^historical-data$ historical-data.php [QSA]
+  RewriteRule ^ae-data$ ae-data.php [QSA]
 </ifModule>

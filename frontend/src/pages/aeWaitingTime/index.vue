@@ -1,6 +1,6 @@
 <template>
   <div class="page-content" v-if="pageReady">
-    <!-- Historical Data -->
+    <!-- AE Waiting Time -->
     <h2>急症室等候時間</h2>
     <div class="remarks">最後更新：{{lastUdate}}</div>
     <card class="ae-waiting-table-card" smallPadding>
@@ -15,7 +15,7 @@
         </div>
       </div>
     </card>
-    <!-- /Historical Data -->
+    <!-- /AE Waiting Time -->
 
     <app-footer sourceLink="https://data.gov.hk/tc-data/dataset/hospital-hadata-ae-waiting-time/resource/9fe0ddc4-e56a-4073-95ae-134b4c0ab3b1" sourceName="資料一線通" autoFetch />
   </div>

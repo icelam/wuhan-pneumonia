@@ -26,7 +26,7 @@ const router = new Router({
     },
     {
       path: routes.aeWaitingTime,
-      name: 'Prevention Method Page',
+      name: 'AE Waiting Time Page',
       component: aeWaitingTimePage
     },
     {

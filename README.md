@@ -3,6 +3,15 @@
 
 ![截圖](docs/screen.png)
 
+### 功能 ###
+* 即時全球感染數字
+* 中國及港澳台地區疫情地圖
+* 海外感染數據
+* 歷史數據
+* 香港急症室輪候時間
+* 炒賣口罩藥房名單
+* 防疫資訊
+
 ### 資料來源 ###
 * 中國地圖：[china-geojson](https://github.com/yezongyang/china-geojson)
 * 感染資訊：[全国新型肺炎疫情实时动态](https://3g.dxy.cn/newh5/view/pneumonia)

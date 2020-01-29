@@ -12,3 +12,6 @@
 # D3 Line Chart References #
 * [D3 v5 Line Chart](https://bl.ocks.org/gordlea/27370d1eea8464b04538e6d8ced39e89)
 * [Pan+Zoom within limits](https://bl.ocks.org/mhsmith/5732011)
+
+# Scrapping Google Sheet #
+* [Embedding a Google Sheet as an HTML Table](https://medium.com/@stvhwrd/embedding-a-google-sheet-as-an-html-table-365306d2ec2c)

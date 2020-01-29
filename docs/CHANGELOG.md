@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.11.1](https://github.com/icelam/wuhan-pneumonia/compare/v1.11.0...v1.11.1) (2020-01-29)
+
+
+### Bug Fixes
+
+* **frontend:** fix news overflow issue on mobile ([803f5f3](https://github.com/icelam/wuhan-pneumonia/commit/803f5f38c8dbbd145a266f24317b4980c81e4d2c))
+* **frontend:** prevent font size being adjusted on iOS landscape mode ([646deb5](https://github.com/icelam/wuhan-pneumonia/commit/646deb58253d9dc8a7a5b54e6c699c083a550089))
+
 ## [1.11.0](https://github.com/icelam/wuhan-pneumonia/compare/v1.10.0...v1.11.0) (2020-01-29)
 
 

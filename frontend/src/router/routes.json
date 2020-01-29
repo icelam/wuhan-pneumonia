@@ -3,6 +3,6 @@
   "historicalData": "/historical-data",
   "preventionMethod": "/prevention-method",
   "aeWaitingTime": "/ae-waiting-time",
-  "hongKongInfo": "/hong-kong-information",
+  "pharmacyList": "/fraudulent-pharmacy",
   "relatedNews": "/related-news"
 }

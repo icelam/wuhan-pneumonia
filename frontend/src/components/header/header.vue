@@ -29,7 +29,7 @@
         </li>
         <li>
           <router-link
-            :to="appRoutes.hongKongInfo"
+            :to="appRoutes.pharmacyList"
             v-on:click.native="closeNav"
             class="nav__link"
             >

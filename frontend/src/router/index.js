@@ -4,7 +4,7 @@ import liveDataPage from '@pages/liveData/index.vue';
 import historicalDataPage from '@pages/historicalData/index.vue';
 import preventionMethodPage from '@pages/preventionMethod/index.vue';
 import aeWaitingTimePage from '@pages/aeWaitingTime/index.vue';
-import hongKongInfoPage from '@pages/hongKongInfo/index.vue';
+import pharmacyListPage from '@pages/pharmacyList/index.vue';
 import relatedNewsPage from '@pages/relatedNews/index.vue';
 import { scrollElement } from '@utils';
 import routes from './routes.json';
@@ -32,9 +32,9 @@ const router = new Router({
       component: aeWaitingTimePage
     },
     {
-      path: routes.hongKongInfo,
-      name: 'Hong Kong Information Page',
-      component: hongKongInfoPage
+      path: routes.pharmacyList,
+      name: 'Fraudulent Pharmacy List Page',
+      component: pharmacyListPage
     },
     {
       path: routes.preventionMethod,

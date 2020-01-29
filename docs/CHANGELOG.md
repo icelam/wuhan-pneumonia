@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.9.0](https://github.com/icelam/wuhan-pneumonia/compare/v1.8.2...v1.9.0) (2020-01-29)
+
+
+### Features
+
+* **backend:** scrap AE waiting time data ([753332a](https://github.com/icelam/wuhan-pneumonia/commit/753332a987ebb54fb0ffea11588175fef6e8a7ab))
+* **frontend:** add "AE Waiting Time" page ([e332ad4](https://github.com/icelam/wuhan-pneumonia/commit/e332ad4cf9446097c7f37280262aaf78261cb3e6))
+
 ### [1.8.2](https://github.com/icelam/wuhan-pneumonia/compare/v1.8.1...v1.8.2) (2020-01-28)
 
 

@@ -1,1 +1,2 @@
-export { default as pneumoniaDataService } from './pneumonia'; // eslint-disable-line import/prefer-default-export
+export { default as pneumoniaDataService } from './pneumonia';
+export { default as aeDataService } from './ae';

@@ -1,3 +1,6 @@
+import hospitalDistricts from '@data/ha/district.json';
+
+// For data map table
 export const generateMapTableData = (data) => {
   if (!data) {
     return [];
@@ -24,6 +27,7 @@ export const generateMapTableData = (data) => {
   return tableData;
 };
 
+// For Overseas Statistics section
 export const generateOverseasTableData = (data) => {
   if (!data) {
     return [];
@@ -48,6 +52,7 @@ export const generateOverseasTableData = (data) => {
   return tableData;
 };
 
+// For Historical Data page
 export const generateHistoricalTableData = (data) => {
   if (!data) {
     return [];
@@ -74,6 +79,28 @@ export const generateHistoricalTableData = (data) => {
       suspect,
       heal,
       dead
+    ];
+  });
+
+  return tableData;
+};
+
+// For AE Waiting Time page
+export const generateAeWaitingTimeTable = (data) => {
+  if (!data) {
+    return [];
+  }
+
+  const tableData = data.map((h) => {
+    const {
+      hospName,
+      topWait
+    } = h;
+
+    return [
+      hospName,
+      hospitalDistricts[hospName],
+      topWait
     ];
   });
 

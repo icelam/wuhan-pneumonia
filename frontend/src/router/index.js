@@ -3,6 +3,7 @@ import Vue from 'vue';
 import liveDataPage from '@pages/liveData/index.vue';
 import historicalDataPage from '@pages/historicalData/index.vue';
 import preventionMethodPage from '@pages/preventionMethod/index.vue';
+import aeWaitingTimePage from '@pages/aeWaitingTime/index.vue';
 import { scrollElement } from '@utils';
 import routes from './routes.json';
 
@@ -22,6 +23,11 @@ const router = new Router({
       path: routes.historicalData,
       name: 'Historical Data Page',
       component: historicalDataPage
+    },
+    {
+      path: routes.aeWaitingTime,
+      name: 'Prevention Method Page',
+      component: aeWaitingTimePage
     },
     {
       path: routes.preventionMethod,

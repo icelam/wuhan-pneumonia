@@ -1,5 +1,6 @@
 {
   "home": "/",
   "historicalData": "/historical-data",
-  "preventionMethod": "/prevention-method"
+  "preventionMethod": "/prevention-method",
+  "aeWaitingTime": "/ae-waiting-time"
 }

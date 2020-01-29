@@ -29,6 +29,15 @@
         </li>
         <li>
           <router-link
+            :to="appRoutes.aeWaitingTime"
+            v-on:click.native="closeNav"
+            class="nav__link"
+            >
+            急症室
+          </router-link>
+        </li>
+        <li>
+          <router-link
             :to="appRoutes.preventionMethod"
             v-on:click.native="closeNav"
             class="nav__link"

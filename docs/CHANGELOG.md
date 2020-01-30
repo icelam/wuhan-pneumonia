@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.12.0](https://github.com/icelam/wuhan-pneumonia/compare/v1.11.1...v1.12.0) (2020-01-30)
+
+
+### Features
+
+* **backend:** scrap HK data from data.gov.hk ([232f860](https://github.com/icelam/wuhan-pneumonia/commit/232f8605a1d32288c9d730ffb74ea90418b193e0))
+* **frontend:** add Hong Kong confirmed case data ([1bd545e](https://github.com/icelam/wuhan-pneumonia/commit/1bd545e298f3fb371c0b80dd8ca4a175c22416f9))
+* **frontend:** add tableCard component ([6c4f25d](https://github.com/icelam/wuhan-pneumonia/commit/6c4f25de9aa483e0ce0761c871b30328c5ae10dd))
+
 ### [1.11.1](https://github.com/icelam/wuhan-pneumonia/compare/v1.11.0...v1.11.1) (2020-01-29)
 
 

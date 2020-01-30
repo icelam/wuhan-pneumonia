@@ -2,8 +2,8 @@
 class haGovScrapper {
   public function __construct() {
     $this->scrap_url = "http://www.ha.org.hk/opendata/aed/aedwtdata-tc.json";
-    $this->store_folder = 'scraps';
-    $this->store_filename = 'ha.json';
+    $this->store_folder = "scraps";
+    $this->store_filename = "ha.json";
   }
   
   public function scrapContent() {

@@ -2,8 +2,8 @@
 class qqNewsScrapper {
   public function __construct() {
     $this->scrap_url = "https://view.inews.qq.com/g2/getOnsInfo?name=wuwei_ww_cn_day_counts";
-    $this->store_folder = 'scraps';
-    $this->store_filename = 'historical.json';
+    $this->store_folder = "scraps";
+    $this->store_filename = "historical.json";
   }
   
   public function scrapContent() {

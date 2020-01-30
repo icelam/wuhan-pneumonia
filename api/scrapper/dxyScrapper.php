@@ -6,8 +6,8 @@ use SteelyWing\Chinese\Chinese;
 class dxyScrapper {
   public function __construct() {
     $this->scrap_url = "https://3g.dxy.cn/newh5/view/pneumonia";
-    $this->store_folder = 'scraps';
-    $this->store_filename = 'data.json';
+    $this->store_folder = "scraps";
+    $this->store_filename = "data.json";
   }
   
   public function scrapContent() {

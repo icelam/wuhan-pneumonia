@@ -1,9 +1,10 @@
 <?php
 class googleNewsScrapper {
   public function __construct() {
+    // $this->scrap_url = "https://rss.app/feeds/6mbkDJ9rbsKORnFA.xml";
     $this->scrap_url = "https://news.google.com/rss/search?q=%E8%82%BA%E7%82%8E&hl=zh-HK&gl=HK&ceid=HK%3Azh-Hant";
-    $this->store_folder = 'scraps';
-    $this->store_filename = 'news.json';
+    $this->store_folder = "scraps";
+    $this->store_filename = "news.json";
   }
   
   public function scrapContent() {
@@ -24,8 +25,8 @@ class googleNewsScrapper {
       }
       
       // Convert scrapped rss to json
-      $extractedRows = $this->convertRssToJson($server_output);
-      $api_output = json_encode($extractedRows);
+      $extracted_rows = $this->convertRssToJson($server_output);
+      $api_output = json_encode($extracted_rows);
 
       // Backup scrap data for future use
       if(!is_dir($this->store_folder)){

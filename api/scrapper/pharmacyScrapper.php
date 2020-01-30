@@ -2,8 +2,8 @@
 class pharmacyScrapper {
   public function __construct() {
     $this->scrap_url = "https://docs.google.com/spreadsheets/d/1x4gHNkS5cfKO8qi-MIp7EiNZP2m5zhK-yv9XSseZqmA/gviz/tq?tqx=out:html&tq&gid=225766462";
-    $this->store_folder = 'scraps';
-    $this->store_filename = 'pharmacy.json';
+    $this->store_folder = "scraps";
+    $this->store_filename = "pharmacy.json";
   }
   
   public function scrapContent() {

@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.13.0](https://github.com/icelam/wuhan-pneumonia/compare/v1.12.1...v1.13.0) (2020-01-30)
+
+
+### Features
+
+* **frontend:** add high risk building data ([706c683](https://github.com/icelam/wuhan-pneumonia/commit/706c683cfa0516a8623dc3321d24f4cf9a219f58))
+
+
+### Bug Fixes
+
+* **frontend:** typo in Hong Kong case route ([64669ce](https://github.com/icelam/wuhan-pneumonia/commit/64669ced3229987d6a72be1fe18fa10044308fac))
+
 ### [1.12.1](https://github.com/icelam/wuhan-pneumonia/compare/v1.12.0...v1.12.1) (2020-01-30)
 
 

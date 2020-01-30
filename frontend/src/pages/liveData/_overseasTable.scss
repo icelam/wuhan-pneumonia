@@ -1,0 +1,9 @@
+@import '~@style/_variables';
+
+@media #{$mobile} {
+ .overseas-table-card {
+    &::v-deep .data-table {
+      font-size: 1rem;
+    }
+  }
+}

@@ -1,7 +1,6 @@
 # Roadmap #
 * Remove RSS app wall, use direct API so that component style can be customized
 * Refactor backend scrapper, identify common code
-* Refactor table card to component
 * Convert historical data table to line chart
 * Convert AE waiting time data table to data map
 * Scrap HK identified case from [https://www.chp.gov.hk/files/pdf/enhanced_sur_pneumonia_wuhan_chi.pdf](https://www.chp.gov.hk/files/pdf/enhanced_sur_pneumonia_wuhan_chi.pdf)

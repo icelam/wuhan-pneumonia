@@ -50,17 +50,17 @@ export default {
       pharmacyDataService.getPharmacyData().then(({ data }) => {
         const [header, ...rows] = data;
 
-        // Remove first column
-        header.shift();
-        rows.forEach((row) => row.shift());
+        // Include only useful columns
+        const selectedHeaderColumn = header.slice(1, 5);
+        const selectedColumnRows = rows.map((row) => row.slice(1, 5));
 
         // Filter empty rows
         // const filteredRows = rows.filter(
         //   (row) => row.reduce((allNonEmpty, cell) => (!!cell.trim() && allNonEmpty), true)
         // );
 
-        this.pharmacyTableHeader = header;
-        this.pharmacyTableRows = rows;
+        this.pharmacyTableHeader = selectedHeaderColumn;
+        this.pharmacyTableRows = selectedColumnRows;
         this.pageReady = true;
       }).catch((err) => {
         console.error(err);

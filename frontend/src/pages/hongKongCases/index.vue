@@ -13,6 +13,16 @@
     />
     <!-- /Hong Kong Cases Data -->
 
+    <!-- High Risk Area Data -->
+    <h2>過去 14 天內確診個案逗留大廈</h2>
+    <table-card
+      class="high-risk-area-table-card"
+      :tableHead="['地區', '大廈', '最後逗留日期', '地圖']"
+      :tableData="highRiskAreaData"
+      :cellAlignment="['center', 'center', 'center']"
+    />
+    <!-- /High Risk Area Data -->
+
     <app-footer sourceLink="https://data.gov.hk/tc-data/dataset/hk-dh-chpsebcddr-novel-infectious-agent" sourceName="資料一線通" />
   </div>
 
@@ -29,7 +39,7 @@ import {
   errorMessage
 } from '@components';
 import { hongKongDataService } from '@services';
-import { formatDate } from '@utils';
+import { formatDate, formatDateWithSlash } from '@utils';
 
 export default {
   components: {
@@ -43,12 +53,13 @@ export default {
       pageReady: false,
       pageError: false,
       fetchTime: Date.now(),
-      confirmedCasesData: undefined
+      confirmedCasesData: undefined,
+      highRiskAreaData: undefined
     };
   },
   methods: {
     getConfirmedCases() {
-      hongKongDataService.getConfirmedCases().then(({ data }) => {
+      const status = hongKongDataService.getConfirmedCases().then(({ data }) => {
         const [, ...rows] = data;
         // Sort DESC by id
         rows.sort((a, b) => (parseInt(a[0], 10) > parseInt(b[0], 10) ? -1 : 1));
@@ -57,25 +68,59 @@ export default {
         const formattedRows = rows.map((row) => {
           const [id, date, ...caseDetails] = row;
 
-          const datePart = date.split('/');
           return [
             id,
-            datePart.length > 1 ? `${parseInt(datePart[1], 10)} 月 ${parseInt(datePart[0], 10)} 日` : date,
+            formatDateWithSlash(date),
             ...caseDetails
           ];
         });
 
         this.confirmedCasesData = formattedRows;
+
+        return true;
+      }).catch(() => false);
+
+      return status;
+    },
+    getHighRiskArea() {
+      const status = hongKongDataService.getHighRiskArea().then(({ data }) => {
+        const [, ...rows] = data;
+
+        // Format date and add google map link
+        const formattedRows = rows.map((row) => {
+          const [area, building, date] = row;
+
+          return [
+            area,
+            building,
+            formatDateWithSlash(date),
+            `<a href="https://maps.google.com/?q=${encodeURI(building)}" target="_blank" rel="noopener noreferrer">查看</a>`
+          ];
+        });
+
+        // Sort DESC by formatted date
+        formattedRows.sort((a, b) => (a[2] > b[2] ? -1 : 1));
+
+        this.highRiskAreaData = formattedRows;
+
+        return true;
+      }).catch(() => false);
+
+      return status;
+    },
+    async getAllData() {
+      const getConfirmedCasesSuccess = await this.getConfirmedCases();
+      const getHighRiskAreaSuccess = await this.getHighRiskArea();
+
+      if (getConfirmedCasesSuccess && getHighRiskAreaSuccess) {
         this.pageReady = true;
-      }).catch(() => {
+      } else {
         this.pageError = true;
-      });
+      }
     }
-
-
   },
   mounted() {
-    this.getConfirmedCases();
+    this.getAllData();
   },
   computed: {
     lastUpdate() {

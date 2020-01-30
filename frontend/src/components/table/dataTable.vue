@@ -14,8 +14,8 @@
         :class="['data-table__cell', `data-table__cell--${cellAlignment[i] || 'left'}`]"
         v-for="(cells, i) in rows"
         :key="i"
+        v-html="cells"
       >
-        {{cells}}
       </div>
     </div>
   </div>

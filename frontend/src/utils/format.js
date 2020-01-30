@@ -6,6 +6,13 @@ export const zeroPad = (n, x) => {
   return (n < 10 ? `${'0'.repeat(x)}${n}` : `${n}`);
 };
 
+// Convert '20/01/2020' to '1 月 20 日'
+export const formatDateWithSlash = (date) => {
+  const datePart = date.split('/');
+  return datePart.length > 1 ? `${parseInt(datePart[1], 10)} 月 ${parseInt(datePart[0], 10)} 日` : date;
+};
+
+// Convert Date.now() to date string
 export const formatDate = (dateToFormat) => {
   const d = new Date(dateToFormat);
 
@@ -44,3 +51,4 @@ export const localeDate = (dateToFormat) => {
 
   return `${formattedDate}`;
 };
+

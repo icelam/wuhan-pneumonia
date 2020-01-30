@@ -1,0 +1,7 @@
+@import '~@style/_variables';
+
+.confirmed-case-table-card {
+  &::v-deep .data-table .data-table__cell {
+    white-space: nowrap;
+  }
+}

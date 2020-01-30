@@ -29,6 +29,15 @@
         </li>
         <li>
           <router-link
+            :to="appRoutes.hongKongCases"
+            v-on:click.native="closeNav"
+            class="nav__link"
+            >
+            香港案例
+          </router-link>
+        </li>
+        <li>
+          <router-link
             :to="appRoutes.pharmacyList"
             v-on:click.native="closeNav"
             class="nav__link"

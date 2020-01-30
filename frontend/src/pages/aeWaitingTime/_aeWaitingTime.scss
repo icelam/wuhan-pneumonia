@@ -1,27 +1,9 @@
 @import '~@style/_variables';
 
-@media #{$tabletDesktop} {
-  .ae-waiting-table {
-    &::v-deep .data-table__cell {
-      &:first-of-type {
-        padding-left: 1.25rem;
-      }
-
-      &:last-of-type {
-        padding-right: 1.25rem;
-      }
-    }
-  }
-}
-
-@media #{$mobile} {
-  .ae-waiting-table {
-    font-size: 0.8125rem;
-
-    &::v-deep .data-table__cell {
-      &:nth-child(2), &:nth-child(3) {
-        white-space: nowrap;
-      }
+.ae-waiting-table-card {
+  &::v-deep .data-table .data-table__cell {
+    &:nth-child(2), &:nth-child(3) {
+      white-space: nowrap;
     }
   }
 }

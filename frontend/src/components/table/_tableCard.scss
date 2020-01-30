@@ -1,7 +1,13 @@
 @import '~@style/_variables';
 
+.table-card {
+  &::v-deep .row {
+    overflow: auto;
+  }
+}
+
 @media #{$tabletDesktop} {
-  .historical-table {
+  .table-card .data-table{
     &::v-deep .data-table__cell {
       &:first-of-type {
         padding-left: 1.25rem;
@@ -15,7 +21,7 @@
 }
 
 @media #{$mobile} {
-  .historical-table {
+  .table-card .data-table {
     font-size: 0.8125rem;
   }
 }

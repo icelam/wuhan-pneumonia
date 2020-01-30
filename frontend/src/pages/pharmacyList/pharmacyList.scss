@@ -1,43 +1,19 @@
 @import '~@style/_variables';
 
 .bad-pharmacy-card {
-  &::v-deep .row {
-    overflow: auto;
-  }
-}
-
-.bad-pharmacy-table {
-  &::v-deep .data-table__cell {
-    &:nth-child(1){
-      min-width: 4rem;
-    }
-
-    &:nth-child(2) {
-      min-width: 3rem;
-    }
-
-    &:nth-child(3) {
-      min-width: 5rem;
-    }
-  }
-}
-
-@media #{$tabletDesktop} {
-  .bad-pharmacy-table {
-    &::v-deep .data-table__cell {
-      &:first-of-type {
-        padding-left: 1.25rem;
+  &::v-deep .data-table {
+    .data-table__cell {
+      &:nth-child(1){
+        min-width: 4rem;
       }
 
-      &:last-of-type {
-        padding-right: 1.25rem;
+      &:nth-child(2) {
+        min-width: 3rem;
+      }
+
+      &:nth-child(3) {
+        min-width: 5rem;
       }
     }
-  }
-}
-
-@media #{$mobile} {
-  .bad-pharmacy-table {
-    font-size: 0.8125rem;
   }
 }

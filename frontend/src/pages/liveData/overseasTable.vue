@@ -1,26 +1,19 @@
 <template>
-  <card class="overseas-table-card" smallPadding>
-    <div class="row">
-      <div class="column column--100 column--no-padding">
-        <data-table
-          class="overseas-table"
-          :tableData="provinceTableData"
-          :tableHead="['國家', ' 確診', '治癒', '死亡']"
-          :cellAlignment="['left', 'center', 'center', 'center']"
-        />
-      </div>
-    </div>
-  </card>
+  <table-card
+    class="overseas-table-card"
+    :tableData="provinceTableData"
+    :tableHead="['國家', ' 確診', '治癒', '死亡']"
+    :cellAlignment="['left', 'center', 'center', 'center']"
+  />
 </template>
 
 <script>
-import { card, dataTable } from '@components';
+import { tableCard } from '@components';
 import { generateOverseasTableData } from '@utils';
 
 export default {
   components: {
-    card,
-    dataTable
+    tableCard
   },
   props: {
     overseasSummary: {
@@ -48,7 +41,3 @@ export default {
   }
 };
 </script>
-
-<style lang='scss' scoped>
-  @import './overseasTable';
-</style>

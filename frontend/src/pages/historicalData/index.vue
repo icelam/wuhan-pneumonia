@@ -3,18 +3,12 @@
     <!-- Historical Data -->
     <h2>中國及港澳台地區歷史數據</h2>
     <div class="remarks"><sup>*</sup>本資料表與即時數據並不是同一個來源，因此數據可能存在差異。數據只供參考。</div>
-    <card class="historical-table-card" smallPadding>
-      <div class="row">
-        <div class="column column--100 column--no-padding">
-          <data-table
-            class="historical-table"
-            :tableData="historicalTableData"
-            :tableHead="['日期', ' 確診', '疑似' , '治癒', '死亡']"
-            :cellAlignment="['left', 'center', 'center', 'center', 'center']"
-          />
-        </div>
-      </div>
-    </card>
+    <table-card
+      class="historical-table-card"
+      :tableData="historicalTableData"
+      :tableHead="['日期', ' 確診', '疑似' , '治癒', '死亡']"
+      :cellAlignment="['left', 'center', 'center', 'center', 'center']"
+    />
     <!-- /Historical Data -->
 
     <app-footer sourceLink="https://news.qq.com/zt2020/page/feiyan.htm" sourceName="騰訊新聞" />
@@ -27,8 +21,7 @@
 
 <script>
 import {
-  card,
-  dataTable,
+  tableCard,
   appFooter,
   loading,
   errorMessage
@@ -38,8 +31,7 @@ import { generateHistoricalTableData } from '@utils';
 
 export default {
   components: {
-    card,
-    dataTable,
+    tableCard,
     appFooter,
     loading,
     errorMessage
@@ -69,7 +61,3 @@ export default {
   }
 };
 </script>
-
-<style lang='scss' scoped>
-  @import './historicalTable';
-</style>

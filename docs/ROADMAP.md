@@ -1,4 +1,5 @@
 # Roadmap #
+* Filter and sort data tables
 * Remove RSS app wall, use direct API so that component style can be customized
 * Refactor backend scrapper, identify common code
 * Convert historical data table to line chart

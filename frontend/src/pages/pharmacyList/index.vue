@@ -46,7 +46,7 @@ export default {
     };
   },
   methods: {
-    getHistoricalData() {
+    getPharmacyData() {
       pharmacyDataService.getPharmacyData().then(({ data }) => {
         const [header, ...rows] = data;
 
@@ -55,20 +55,21 @@ export default {
         rows.forEach((row) => row.shift());
 
         // Filter empty rows
-        const filteredRows = rows.filter(
-          (row) => row.reduce((allNonEmpty, cell) => (!!cell.trim() && allNonEmpty), true)
-        );
+        // const filteredRows = rows.filter(
+        //   (row) => row.reduce((allNonEmpty, cell) => (!!cell.trim() && allNonEmpty), true)
+        // );
 
         this.pharmacyTableHeader = header;
-        this.pharmacyTableRows = filteredRows;
+        this.pharmacyTableRows = rows;
         this.pageReady = true;
-      }).catch(() => {
+      }).catch((err) => {
+        console.error(err);
         this.pageError = true;
       });
     }
   },
   mounted() {
-    this.getHistoricalData();
+    this.getPharmacyData();
   }
 };
 </script>

@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.12.1](https://github.com/icelam/wuhan-pneumonia/compare/v1.12.0...v1.12.1) (2020-01-30)
+
+
+### Bug Fixes
+
+* **frontend:** remove empty row filter on pharmacy list ([639dda5](https://github.com/icelam/wuhan-pneumonia/commit/639dda562f185a12ff0711e16796a535c90fd1a3))
+
 ## [1.12.0](https://github.com/icelam/wuhan-pneumonia/compare/v1.11.1...v1.12.0) (2020-01-30)
 
 

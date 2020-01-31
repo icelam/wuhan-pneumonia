@@ -8,6 +8,9 @@
       :tableData="aeWaitingTimeTableData"
       :tableHead="['醫院', '區域', '等候時間']"
       :cellAlignment="['left', 'left', 'right']"
+      enableSort
+      :defaultSortColumnIndex="-1"
+      defaultSortDirection="desc"
     />
     <!-- /AE Waiting Time -->
 

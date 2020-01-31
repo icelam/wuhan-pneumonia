@@ -4,6 +4,9 @@
     :tableData="provinceTableData"
     :tableHead="['國家', ' 確診', '治癒', '死亡']"
     :cellAlignment="['left', 'center', 'center', 'center']"
+    enableSort
+    :defaultSortColumnIndex="-1"
+    defaultSortDirection="desc"
   />
 </template>
 

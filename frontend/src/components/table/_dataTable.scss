@@ -6,6 +6,35 @@
   display: table;
   color: $color-table-text;
 
+  &--sortable &__head &__cell {
+    cursor: pointer;
+    position: relative;
+
+    &--sort{
+      $triangle-size: 0.25rem;
+
+      &-asc:after, &-desc:after {
+        position: absolute;
+        top: 50%;
+        margin: (($triangle-size / 2) * -1) 0 0 0.1875rem;
+        content: " ";
+        width: 0;
+        height: 0;
+        border-style: solid;
+      }
+
+      &-asc:after {
+        border-width: 0 $triangle-size $triangle-size $triangle-size;
+        border-color: transparent transparent $color-table-arrow transparent;
+      }
+
+      &-desc:after {
+        border-width: $triangle-size $triangle-size 0 $triangle-size;
+        border-color: $color-table-arrow transparent transparent transparent;
+      }
+    }
+  }
+
   &__head {
     display: table-row;
     color: $color-table-head-text;

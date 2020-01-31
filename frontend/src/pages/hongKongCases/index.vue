@@ -10,6 +10,9 @@
       :tableHead="['#', '日期', '性別', '年齡', '入住醫院', '狀況']"
       :tableData="confirmedCasesData"
       :cellAlignment="['left', 'center', 'center', 'center', 'center', 'center']"
+      enableSort
+      :defaultSortColumnIndex="0"
+      defaultSortDirection="desc"
     />
     <!-- /Hong Kong Cases Data -->
 
@@ -20,6 +23,9 @@
       :tableHead="['地區', '大廈', '最後逗留日期', '地圖']"
       :tableData="highRiskAreaData"
       :cellAlignment="['center', 'center', 'center']"
+      enableSort
+      :defaultSortColumnIndex="2"
+      defaultSortDirection="desc"
     />
     <!-- /High Risk Area Data -->
 
@@ -61,8 +67,6 @@ export default {
     getConfirmedCases() {
       const status = hongKongDataService.getConfirmedCases().then(({ data }) => {
         const [, ...rows] = data;
-        // Sort DESC by id
-        rows.sort((a, b) => (parseInt(a[0], 10) > parseInt(b[0], 10) ? -1 : 1));
 
         // Format date
         const formattedRows = rows.map((row) => {
@@ -97,9 +101,6 @@ export default {
             `<a href="https://maps.google.com/?q=${encodeURI(building)}" target="_blank" rel="noopener noreferrer">查看</a>`
           ];
         });
-
-        // Sort DESC by formatted date
-        formattedRows.sort((a, b) => (a[2] > b[2] ? -1 : 1));
 
         this.highRiskAreaData = formattedRows;
 

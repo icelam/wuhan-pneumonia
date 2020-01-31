@@ -10,6 +10,9 @@
       :tableData="pharmacyTableRows"
       :tableHead="pharmacyTableHeader"
       :cellAlignment="['left', 'left', 'left', 'left']"
+      enableSort
+      :defaultSortColumnIndex="-1"
+      defaultSortDirection="desc"
     />
     <!-- /Bad Pharmacy List -->
 

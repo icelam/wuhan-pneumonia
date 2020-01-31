@@ -8,6 +8,9 @@
       :tableData="historicalTableData"
       :tableHead="['日期', ' 確診', '疑似' , '治癒', '死亡']"
       :cellAlignment="['left', 'center', 'center', 'center', 'center']"
+      enableSort
+      :defaultSortColumnIndex="0"
+      defaultSortDirection="desc"
     />
     <!-- /Historical Data -->
 
@@ -47,8 +50,6 @@ export default {
     getHistoricalData() {
       pneumoniaDataService.getHistoricalData().then(({ data }) => {
         const { data: result } = data;
-        // Sort date string
-        result.sort((a, b) => (a.date > b.date ? -1 : 1));
         this.historicalTableData = generateHistoricalTableData(result);
         this.pageReady = true;
       }).catch(() => {

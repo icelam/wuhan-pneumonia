@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.15.0](https://github.com/icelam/wuhan-pneumonia/compare/v1.14.0...v1.15.0) (2020-01-31)
+
+
+### Features
+
+* **frontend:** zoom map when clicking map table row ([08d187f](https://github.com/icelam/wuhan-pneumonia/commit/08d187f44ccfc87ae3c66cb42433b9cf43896eae))
+
 ## [1.14.0](https://github.com/icelam/wuhan-pneumonia/compare/v1.13.0...v1.14.0) (2020-01-31)
 
 

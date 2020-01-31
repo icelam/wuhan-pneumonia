@@ -18,15 +18,19 @@
         ]"
         v-for="(head, i) in tableHead"
         :key="i"
-        @click="sortByColumn(i)"
+        v-on:click="sortByColumn(i)"
       >
         {{head}}
       </div>
     </div>
-    <div class="data-table__row" v-for="(rows, i) in sortedTableData" :key="i">
+    <div class="data-table__row"
+      v-for="(row, i) in sortedTableData"
+      :key="i"
+      v-on:click="$emit('rowClicked', { index: i, data: row })"
+    >
       <div
         :class="['data-table__cell', `data-table__cell--${cellAlignment[i] || 'left'}`]"
-        v-for="(cells, i) in rows"
+        v-for="(cells, i) in row"
         :key="i"
         v-html="cells"
       >

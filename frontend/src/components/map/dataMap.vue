@@ -121,8 +121,7 @@ export default {
               .scale(
                 Math.min(8, 0.9 / Math.max((x1 - x0) / this.mapWidth, (y1 - y0) / this.mapHeight))
               )
-              .translate(-(x0 + x1) / 2, -(y0 + y1) / 2),
-            d3.mouse(svg.node())
+              .translate(-(x0 + x1) / 2, -(y0 + y1) / 2)
           );
         } else {
           reset();
@@ -167,6 +166,8 @@ export default {
       // Province path
       provinceGroup.append('path')
         .attr('d', path)
+        .attr('class', 'data-map__province')
+        .attr('data-label', (d) => `${d.properties.name}`)
         .attr('fill', (d) => {
           const provinceStatistic = this.getProvinceStatistics(d);
 

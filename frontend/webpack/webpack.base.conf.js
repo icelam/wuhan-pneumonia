@@ -55,6 +55,7 @@ module.exports = {
       '@data': Path.resolve(__dirname, '../src/data'),
       '@images': Path.resolve(__dirname, '../src/assets/images'),
       '@pages': Path.resolve(__dirname, '../src/pages'),
+      '@polyfills': Path.resolve(__dirname, '../src/polyfills'),
       '@router': Path.resolve(__dirname, '../src/router'),
       '@style': Path.resolve(__dirname, '../src/assets/scss'),
       '@services': Path.resolve(__dirname, '../src/services'),

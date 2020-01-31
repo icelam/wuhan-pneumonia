@@ -15,9 +15,15 @@
 }
 
 .map-table {
-  &::v-deep .data-table__cell {
-    &:first-of-type {
-      min-width: 3rem;
+  &::v-deep .data-table {
+    &__row {
+      cursor: pointer;
+    }
+
+    &__cell {
+      &:first-of-type {
+        min-width: 3rem;
+      }
     }
   }
 }

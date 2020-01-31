@@ -2,13 +2,14 @@
   <card class="map-card">
     <div class="row">
       <div class="column column--60">
-        <data-map :provinceSummary="provinceSummary"/>
+        <data-map :provinceSummary="provinceSummary" />
       </div>
       <div class="column column--40 column--no-padding">
         <data-table
           class="map-table"
           :tableData="provinceTableData"
           :cellAlignment="['left', 'left']"
+          v-on:rowClicked="rowClickHandler"
         />
       </div>
     </div>
@@ -39,6 +40,10 @@ export default {
   methods: {
     formatTableData() {
       this.provinceTableData = generateMapTableData(this.provinceSummary);
+    },
+    rowClickHandler({ data }) {
+      const [clickedItem] = data;
+      document.querySelector(`.data-map__province[data-label*=${clickedItem}]`).dispatchEvent(new MouseEvent('click'));
     }
   },
   beforeMount() {

@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.14.0](https://github.com/icelam/wuhan-pneumonia/compare/v1.13.0...v1.14.0) (2020-01-31)
+
+
+### Features
+
+* **frontend:** implement simple table sorting ([69b7a70](https://github.com/icelam/wuhan-pneumonia/commit/69b7a706662ca2bc4cc1213a75e3c4629b88c2c2))
+
+
+### Bug Fixes
+
+* **frontend:** fix app icons link ([97713d2](https://github.com/icelam/wuhan-pneumonia/commit/97713d2856741fb12e4f89f78fe6d4fbaf64db6e))
+* **frontend:** fix wrong manifest and favicon path ([3e486c8](https://github.com/icelam/wuhan-pneumonia/commit/3e486c85bba6563ea88ff9cbdecce8d2610ee20e))
+* **frontend:** remove empty column in pharmacy list ([cb2eede](https://github.com/icelam/wuhan-pneumonia/commit/cb2eede763739fb4332bbbe9c6903120a811799c))
+
 ## [1.13.0](https://github.com/icelam/wuhan-pneumonia/compare/v1.12.1...v1.13.0) (2020-01-30)
 
 

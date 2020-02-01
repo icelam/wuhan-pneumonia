@@ -15,7 +15,7 @@
     <overseas-table :overseasSummary="overseasSummary"/>
     <!-- /Overseas Section -->
 
-    <app-footer sourceLink="https://3g.dxy.cn/newh5/view/pneumonia" sourceName="丁香醫生" autoFetch/>
+    <app-footer sourceLink="https://ncov.dxy.cn/ncovh5/view/pneumonia" sourceName="丁香醫生" autoFetch/>
   </div>
 
   <error-message message="無法取得最新資訊。" v-else-if="pageError" />

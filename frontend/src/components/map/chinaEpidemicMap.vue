@@ -1,5 +1,5 @@
 <template>
-  <div class="data-map">
+  <div class="china-epidemic-map">
     <svg id="whpMap"></svg>
   </div>
 </template>
@@ -166,7 +166,7 @@ export default {
       // Province path
       provinceGroup.append('path')
         .attr('d', path)
-        .attr('class', 'data-map__province')
+        .attr('class', 'china-epidemic-map__province')
         .attr('data-label', (d) => `${d.properties.name}`)
         .attr('fill', (d) => {
           const provinceStatistic = this.getProvinceStatistics(d);
@@ -389,7 +389,7 @@ export default {
 </script>
 
 <style lang='scss' scoped>
-  .data-map {
+  .china-epidemic-map {
     svg {
       width: 100%;
       display: block;

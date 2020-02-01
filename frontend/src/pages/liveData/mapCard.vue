@@ -2,7 +2,7 @@
   <card class="map-card">
     <div class="row">
       <div class="column column--60">
-        <data-map :provinceSummary="provinceSummary" />
+        <china-epidemic-map :provinceSummary="provinceSummary" />
       </div>
       <div class="column column--40 column--no-padding">
         <data-table
@@ -17,13 +17,13 @@
 </template>
 
 <script>
-import { card, dataMap, dataTable } from '@components';
+import { card, chinaEpidemicMap, dataTable } from '@components';
 import { generateMapTableData } from '@utils';
 
 export default {
   components: {
     card,
-    dataMap,
+    chinaEpidemicMap,
     dataTable
   },
   props: {
@@ -43,7 +43,7 @@ export default {
     },
     rowClickHandler({ data }) {
       const [clickedItem] = data;
-      document.querySelector(`.data-map__province[data-label*=${clickedItem}]`).dispatchEvent(new MouseEvent('click'));
+      document.querySelector(`.china-epidemic-map__province[data-label*=${clickedItem}]`).dispatchEvent(new MouseEvent('click'));
     }
   },
   beforeMount() {

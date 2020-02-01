@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.16.0](https://github.com/icelam/wuhan-pneumonia/compare/v1.15.1...v1.16.0) (2020-02-01)
+
+
+### Features
+
+* **frontend:** convert table of A&E waiting time to data map ([0c41908](https://github.com/icelam/wuhan-pneumonia/commit/0c419084fde09bb3d74ff6b87227f904e4c5f081))
+
+
+### Bug Fixes
+
+* **frontend:** update data source of live data ([1fd2fba](https://github.com/icelam/wuhan-pneumonia/commit/1fd2fbad372ca0bcc585f760b2d03f0c2a3bb3ef))
+
 ### [1.15.1](https://github.com/icelam/wuhan-pneumonia/compare/v1.15.0...v1.15.1) (2020-02-01)
 
 

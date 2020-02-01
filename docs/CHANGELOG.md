@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.15.1](https://github.com/icelam/wuhan-pneumonia/compare/v1.15.0...v1.15.1) (2020-02-01)
+
+
+### Bug Fixes
+
+* **backend:** change scrapping url of live data ([9514098](https://github.com/icelam/wuhan-pneumonia/commit/9514098dbc993c0dc7abdd99579dfdc9ea5f0e07))
+
 ## [1.15.0](https://github.com/icelam/wuhan-pneumonia/compare/v1.14.0...v1.15.0) (2020-01-31)
 
 

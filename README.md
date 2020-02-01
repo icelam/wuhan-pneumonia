@@ -16,7 +16,7 @@
 
 ### 資料來源 ###
 * 中國地圖：[china-geojson](https://github.com/yezongyang/china-geojson)
-* 感染資訊：[全国新型肺炎疫情实时动态](https://3g.dxy.cn/newh5/view/pneumonia)
+* 感染資訊：[全国新型肺炎疫情实时动态](https://ncov.dxy.cn/ncovh5/view/pneumonia)
 * 歷史數據：[实时更新：新型肺炎疫情最新动态](https://news.qq.com/zt2020/page/feiyan.htm#prevent)
 * 香港案例：[資料一線通 | DATA.GOV.HK - 嚴重新型傳染性病原體呼吸系統病的數據](https://data.gov.hk/tc-data/dataset/hk-dh-chpsebcddr-novel-infectious-agent)
 * 藥房黑名單: [炒賣口罩藥房名單](https://docs.google.com/spreadsheets/d/1x4gHNkS5cfKO8qi-MIp7EiNZP2m5zhK-yv9XSseZqmA/edit#gid=225766462)

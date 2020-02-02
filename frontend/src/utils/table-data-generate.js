@@ -21,7 +21,12 @@ export const generateMapTableData = (data) => {
     deadCount && summaryList.push(`死亡 ${deadCount} 例`);
     // curedCount && summaryList.push(`治癒 ${curedCount} 例`);
 
-    return [provinceShortName, summaryList.join('，')];
+    const summaryString = summaryList.join('，');
+
+    return [
+      provinceShortName,
+      summaryString || '未有數據'
+    ];
   });
 
   return tableData;

@@ -1,10 +1,7 @@
 <ifModule mod_rewrite.c>
   RewriteEngine on
-  RewriteRule ^live-data$ live-data.php [QSA]
-  RewriteRule ^historical-data$ historical-data.php [QSA]
-  RewriteRule ^ae-data$ ae-data.php [QSA]
-  RewriteRule ^pharmacy-data$ pharmacy-data.php [QSA]
-  RewriteRule ^news-data$ news-data.php [QSA]
-  RewriteRule ^high-risk-area-data$ high-risk-area-data.php [QSA]
-  RewriteRule ^hk-identified-data$ hk-identified-data.php [QSA]
+  RewriteEngine on 
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{REQUEST_FILENAME}\.php -f
+  RewriteRule ^(.*)$ $1.php [NC,L]
 </ifModule>

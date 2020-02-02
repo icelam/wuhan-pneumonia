@@ -1,5 +1,7 @@
 <?php
-class googleNewsScrapper {
+require_once('baseScrapper.php');
+
+class googleNewsScrapper extends baseScrapper {
   public function __construct() {
     // $this->scrap_url = "https://rss.app/feeds/6mbkDJ9rbsKORnFA.xml";
     $this->scrap_url = "https://news.google.com/rss/search?q=%E8%82%BA%E7%82%8E&hl=zh-HK&gl=HK&ceid=HK%3Azh-Hant";
@@ -7,56 +9,15 @@ class googleNewsScrapper {
     $this->store_filename = "news.json";
   }
   
-  public function scrapContent() {
+  public function postProcessing($data) {
     try {   
-      $ch = curl_init();
-      curl_setopt($ch, CURLOPT_URL, $this->scrap_url);
-      curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-
-      $server_output = curl_exec ($ch);
-      $scrap_error = curl_error($ch);
-      $scrap_status_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-      
-      curl_close ($ch);
-
-      // Error handling
-      if ($scrap_error || $scrap_status_code !== 200) {
-        throw new Exception($scrap_error);
-      }
-      
       // Convert scrapped rss to json
-      $extracted_rows = $this->convertRssToJson($server_output);
+      $extracted_rows = $this->convertRssToJson($data);
       $api_output = json_encode($extracted_rows);
-
-      // Backup scrap data for future use
-      if(!is_dir($this->store_folder)){
-        if (!mkdir($this->store_folder, 0777, true)) {
-          // Failed to create folder, skip saving
-          return $api_output;
-        }
-      }
-
-      $fp = fopen($this->store_folder . "/" . $this->store_filename, "w");
-      
-      // Lock file for writing
-      if (flock($fp, LOCK_EX)) {  
-        ftruncate($fp, 0);
-        fwrite($fp, $api_output);
-        fflush($fp);
-        flock($fp, LOCK_UN);
-      } 
-      
-      fclose($fp);
 
       return $api_output;
     } catch (Exception $e) {
-      // Show backup data
-      if(file_exists($this->store_folder . "/" . $this->store_filename)) {
-        $backup_data = file_get_contents($this->store_folder . "/" . $this->store_filename);
-        return $backup_data;
-      }
-        
-      return '{"status": 500, "reason": "' . $e . '"}';
+      return NULL;
     }
   }
 

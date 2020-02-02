@@ -1,6 +1,6 @@
 @import '~@style/_variables';
 
-.confirmed-case-table-card, .high-risk-area-table-card {
+.confirmed-case-table-card, .high-risk-area-table-card, .affected-transport-table-card {
   &::v-deep .data-table .data-table__cell {
     white-space: nowrap;
   }

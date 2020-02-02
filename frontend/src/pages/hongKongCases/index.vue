@@ -17,7 +17,7 @@
     <!-- /Hong Kong Cases Data -->
 
     <!-- High Risk Area Data -->
-    <h2>過去 14 天內確診個案逗留大廈</h2>
+    <h2>過去 14 天內確診患者逗留大廈</h2>
     <table-card
       class="high-risk-area-table-card"
       :tableHead="['地區', '大廈', '最後逗留日期', '地圖']"
@@ -28,6 +28,19 @@
       defaultSortDirection="desc"
     />
     <!-- /High Risk Area Data -->
+
+    <!-- Affected Transport Data -->
+    <h2>過去 14 天內確診患者乘搭的航班 / 火車</h2>
+    <table-card
+      class="affected-transport-table-card"
+      :tableHead="['航班 / 火車編號', '起點及終點', '乘搭日期']"
+      :tableData="affectedTransportData"
+      :cellAlignment="['center', 'center', 'center']"
+      enableSort
+      :defaultSortColumnIndex="2"
+      defaultSortDirection="desc"
+    />
+    <!-- /Affected Transport Data -->
 
     <app-footer sourceLink="https://data.gov.hk/tc-data/dataset/hk-dh-chpsebcddr-novel-infectious-agent" sourceName="資料一線通" />
   </div>
@@ -60,7 +73,8 @@ export default {
       pageError: false,
       fetchTime: Date.now(),
       confirmedCasesData: undefined,
-      highRiskAreaData: undefined
+      highRiskAreaData: undefined,
+      affectedTransportData: undefined
     };
   },
   methods: {
@@ -109,11 +123,34 @@ export default {
 
       return status;
     },
+    getAffectedTransport() {
+      const status = hongKongDataService.getAffectedTransport().then(({ data }) => {
+        const [, ...rows] = data;
+
+        // Format date
+        const formattedRows = rows.map((row) => {
+          const [transport, fromTo, date] = row;
+
+          return [
+            transport,
+            fromTo,
+            formatDateWithSlash(date)
+          ];
+        });
+
+        this.affectedTransportData = formattedRows;
+
+        return true;
+      }).catch(() => false);
+
+      return status;
+    },
     async getAllData() {
       const getConfirmedCasesSuccess = await this.getConfirmedCases();
       const getHighRiskAreaSuccess = await this.getHighRiskArea();
+      const getAffectedTransportSuccess = await this.getAffectedTransport();
 
-      if (getConfirmedCasesSuccess && getHighRiskAreaSuccess) {
+      if (getConfirmedCasesSuccess && getHighRiskAreaSuccess && getAffectedTransportSuccess) {
         this.pageReady = true;
       } else {
         this.pageError = true;

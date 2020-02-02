@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.17.0](https://github.com/icelam/wuhan-pneumonia/compare/v1.16.0...v1.17.0) (2020-02-02)
+
+
+### Features
+
+* **backend:** scrap affected trains and flight data ([994c284](https://github.com/icelam/wuhan-pneumonia/commit/994c28466db63b2e7bbb36bb858580ec3a0b1b06))
+* **frontend:** add hong kong affected transport data ([c882b69](https://github.com/icelam/wuhan-pneumonia/commit/c882b69c7a3fa96d80222bef48865b6263b53a88))
+* **frontend:** handle date string sorting in data tables ([c1d57c1](https://github.com/icelam/wuhan-pneumonia/commit/c1d57c100fde52ea09b31515190af6b639f45b76))
+
 ## [1.16.0](https://github.com/icelam/wuhan-pneumonia/compare/v1.15.1...v1.16.0) (2020-02-01)
 
 

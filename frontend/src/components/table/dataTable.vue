@@ -40,6 +40,8 @@
 </template>
 
 <script>
+import { zeroPad } from '@utils';
+
 export default {
   props: {
     tableHead: {
@@ -104,18 +106,28 @@ export default {
       clonedTableData.sort((a, b) => {
         const modifier = this.currentSortDirection === 'asc' ? 1 : -1;
 
-        // handle integer sort
-        const aValue = /^\d+$/.test(a[this.currentSortColumn])
-          ? parseInt(a[this.currentSortColumn], 10)
-          : a[this.currentSortColumn];
+        const dateRegex = /^(\d{1,2})\s?月\s?(\d{1,2})\s?日$/;
 
-        const bValue = /^\d+$/.test(b[this.currentSortColumn])
-          ? parseInt(b[this.currentSortColumn], 10)
-          : b[this.currentSortColumn];
+        // handle integer and date sort
+        const aValue = a[this.currentSortColumn];
 
-        const result = aValue < bValue
+        const aValueForSort = /^\d+$/.test(aValue)
+          ? parseInt(aValue, 10)
+          : dateRegex.test(aValue)
+            ? `${zeroPad(aValue.match(dateRegex)[1], 1)}${zeroPad(aValue.match(dateRegex)[2], 1)}`
+            : aValue;
+
+        const bValue = b[this.currentSortColumn];
+
+        const bValueForSort = /^\d+$/.test(bValue)
+          ? parseInt(bValue, 10)
+          : dateRegex.test(bValue)
+            ? `${zeroPad(bValue.match(dateRegex)[1], 1)}${zeroPad(bValue.match(dateRegex)[2], 1)}`
+            : bValue;
+
+        const result = aValueForSort < bValueForSort
           ? -1 * modifier
-          : aValue > bValue
+          : aValueForSort > bValueForSort
             ? 1 * modifier
             : 0;
 

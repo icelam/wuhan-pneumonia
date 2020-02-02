@@ -73,7 +73,7 @@ export const generateHistoricalTableData = (data) => {
     } = d;
 
     // Format date
-    const datePart = date.split('.');
+    const datePart = date.split('/');
     const formattedDate = datePart.length === 2
       ? `${parseInt(datePart[0], 10)} 月 ${parseInt(datePart[1], 10)} 日`
       : date;

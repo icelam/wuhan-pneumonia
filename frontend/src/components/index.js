@@ -6,3 +6,4 @@ export { default as appHeader } from '@components/header';
 export { default as loading } from '@components/loading';
 export * from '@components/table';
 export { default as errorMessage } from '@components/error';
+export { default as newsCard } from '@components/news';

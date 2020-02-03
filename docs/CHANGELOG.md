@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.18.0](https://github.com/icelam/wuhan-pneumonia/compare/v1.17.0...v1.18.0) (2020-02-03)
+
+
+### Features
+
+* **backend:** change data source of related news to RSS App ([2044bf2](https://github.com/icelam/wuhan-pneumonia/commit/2044bf297476902542e43834af197717d18a8f04))
+* **frontend:** replace rss app wall with custom news card component ([67b9555](https://github.com/icelam/wuhan-pneumonia/commit/67b9555392e036349b952f808e3792c1aa933287))
+
 ## [1.17.0](https://github.com/icelam/wuhan-pneumonia/compare/v1.16.0...v1.17.0) (2020-02-02)
 
 

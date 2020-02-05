@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.19.0](https://github.com/icelam/wuhan-pneumonia/compare/v1.18.0...v1.19.0) (2020-02-05)
+
+
+### Features
+
+* **backend:** scrap Hong Kong's latest suitation ([021188f](https://github.com/icelam/wuhan-pneumonia/commit/021188f9a58972ebfed7280bbf17f522df7b4658))
+* **frontend:** add Hong Kong latest suitation data ([1045145](https://github.com/icelam/wuhan-pneumonia/commit/10451455fa34a86cb024f47d61a7ee63a15023fe))
+
+
+### Bug Fixes
+
+* **backend:** remove invalid xml characters returned from rss.app ([00e706b](https://github.com/icelam/wuhan-pneumonia/commit/00e706b8eb138550631ad9f70d9148638ae56285))
+
 ## [1.18.0](https://github.com/icelam/wuhan-pneumonia/compare/v1.17.0...v1.18.0) (2020-02-03)
 
 

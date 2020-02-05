@@ -25,8 +25,11 @@ class googleNewsScrapper extends baseScrapper {
     }
   }
 
+  // rss.app have a low chance to return invalid characters:
+  // Reference: https://stackoverflow.com/a/3466049
   private function convertRssToJson($rss) {
-    $xml = simplexml_load_string($rss,"SimpleXMLElement", LIBXML_NOCDATA);
+    $rssStriped = $this->stripInvalidXml($rss);
+    $xml = simplexml_load_string($rssStriped,"SimpleXMLElement", LIBXML_NOCDATA);
     
     // Convert publish time to timestamp
     foreach ($xml->channel->item as $item) {
@@ -43,6 +46,31 @@ class googleNewsScrapper extends baseScrapper {
     $result = json_encode($xml);
 
     return $result;
+  }
+
+  private function stripInvalidXml($value) {
+    $ret = "";
+    $current;
+    if (empty($value)) {
+        return $ret;
+    }
+
+    $length = strlen($value);
+
+    for ($i=0; $i < $length; $i++) {
+      $current = ord($value{$i});
+      if (($current == 0x9) ||
+        ($current == 0xA) ||
+        ($current == 0xD) ||
+        (($current >= 0x20) && ($current <= 0xD7FF)) ||
+        (($current >= 0xE000) && ($current <= 0xFFFD)) ||
+        (($current >= 0x10000) && ($current <= 0x10FFFF))) {
+        $ret .= chr($current);
+      } else {
+          $ret .= " ";
+      }
+    }
+    return $ret;
   }
 }
 ?>

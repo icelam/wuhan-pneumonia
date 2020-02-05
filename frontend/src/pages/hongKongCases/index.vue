@@ -1,7 +1,7 @@
 <template>
   <div class="page-content" v-if="pageReady">
     <!-- Hong Kong Latest Suitation -->
-    <h2>最新情況</h2>
+    <h2>香港最新情況</h2>
     <latest-suitation :latestSuitationData="latestSuitationData" />
     <!-- /Hong Kong Latest Suitation -->
 
@@ -44,6 +44,19 @@
     />
     <!-- /Affected Transport Data -->
 
+    <!-- Building of Home Confinees Data -->
+    <h2>接受家居檢疫人士所居住大廈</h2>
+    <table-card
+      class="home-confinees-building-table-card"
+      :tableHead="['編號', '地區', '大廈名稱', '家居檢疫最後日期', '地圖']"
+      :tableData="homeConfineesBuildingData"
+      :cellAlignment="['left','center', 'center', 'center','center']"
+      enableSort
+      :defaultSortColumnIndex="3"
+      defaultSortDirection="desc"
+    />
+    <!-- /Building of Home Confinees Data -->
+
     <app-footer sourceLink="https://data.gov.hk/tc-data/dataset/hk-dh-chpsebcddr-novel-infectious-agent" sourceName="資料一線通" />
   </div>
 
@@ -80,7 +93,8 @@ export default {
       confirmedCasesData: undefined,
       highRiskAreaData: undefined,
       latestSuitationData: undefined,
-      affectedTransportData: undefined
+      affectedTransportData: undefined,
+      homeConfineesBuildingData: undefined
     };
   },
   methods: {
@@ -163,16 +177,42 @@ export default {
 
       return status;
     },
+    getHomeConfineesBuilding() {
+      const status = hongKongDataService.getHomeConfineesBuilding().then(({ data }) => {
+        const [, ...rows] = data;
+
+        // Format date
+        const formattedRows = rows.map((row) => {
+          const [id, area, building, date] = row;
+
+          return [
+            id,
+            area,
+            building,
+            formatDateWithSlash(date),
+            `<a href="https://maps.google.com/?q=${encodeURI(building)}" target="_blank" rel="noopener noreferrer">查看</a>`
+          ];
+        });
+
+        this.homeConfineesBuildingData = formattedRows;
+
+        return true;
+      }).catch(() => false);
+
+      return status;
+    },
     async getAllData() {
       const getConfirmedCasesSuccess = await this.getConfirmedCases();
       const getHighRiskAreaSuccess = await this.getHighRiskArea();
       const getAffectedTransportSuccess = await this.getAffectedTransport();
       const getLatestSuitationSuccess = await this.getLatestSuitation();
+      const getHomeConfineesBuildingSuccess = await this.getHomeConfineesBuilding();
 
       if (getConfirmedCasesSuccess
         && getHighRiskAreaSuccess
         && getAffectedTransportSuccess
         && getLatestSuitationSuccess
+        && getHomeConfineesBuildingSuccess
       ) {
         this.pageReady = true;
       } else {

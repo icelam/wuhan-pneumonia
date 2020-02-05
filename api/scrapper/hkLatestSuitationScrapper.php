@@ -5,7 +5,7 @@ class hkLatestSuitationScrapper extends baseScrapper {
   public function __construct() {
     $this->scrap_url = "https://www.chp.gov.hk/files/misc/latest_situation_of_reported_cases_wuhan_chi.csv";
     $this->store_folder = "scraps";
-    $this->store_filename = "latestSuitation.csv";
+    $this->store_filename = "latest-suitation.csv";
   }
   
   public function postProcessing($data) {

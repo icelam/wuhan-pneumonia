@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.20.0](https://github.com/icelam/wuhan-pneumonia/compare/v1.19.0...v1.20.0) (2020-02-05)
+
+
+### Features
+
+* **backend:** scrap data for buildings of home confinees in Hong Kong ([be841c8](https://github.com/icelam/wuhan-pneumonia/commit/be841c8e2469657ac36108933d9b4aea3ae794c0))
+* **frontend:** add data for buildings of home confinees in Hong Kong ([112d6c0](https://github.com/icelam/wuhan-pneumonia/commit/112d6c0f4ac36e8c3567c983e1d57ab723c09e07))
+
 ## [1.19.0](https://github.com/icelam/wuhan-pneumonia/compare/v1.18.0...v1.19.0) (2020-02-05)
 
 

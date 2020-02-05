@@ -1,10 +1,12 @@
 <template>
   <div class="page-content" v-if="pageReady">
+    <!-- Hong Kong Latest Suitation -->
+    <h2>最新情況</h2>
+    <latest-suitation :latestSuitationData="latestSuitationData" />
+    <!-- /Hong Kong Latest Suitation -->
+
     <!-- Hong Kong Cases Data -->
     <h2>香港確診案例</h2>
-    <div class="remarks" v-if="lastUpdate">
-      截至 {{lastUpdate}}，香港總共有 {{ confirmedCasesData.length }} 宗確診案例。
-    </div>
     <table-card
       class="confirmed-case-table-card"
       :tableHead="['#', '日期', '性別', '年齡', '入住醫院', '狀況']"
@@ -58,10 +60,13 @@ import {
   errorMessage
 } from '@components';
 import { hongKongDataService } from '@services';
-import { formatDate, formatDateWithSlash } from '@utils';
+import { formatDateWithSlash } from '@utils';
+
+import latestSuitation from './latestStatistics.vue';
 
 export default {
   components: {
+    latestSuitation,
     tableCard,
     appFooter,
     loading,
@@ -74,6 +79,7 @@ export default {
       fetchTime: Date.now(),
       confirmedCasesData: undefined,
       highRiskAreaData: undefined,
+      latestSuitationData: undefined,
       affectedTransportData: undefined
     };
   },
@@ -145,12 +151,29 @@ export default {
 
       return status;
     },
+    getLatestSuitation() {
+      const status = hongKongDataService.getLatestSuitation().then(({ data }) => {
+        this.latestSuitationData = data;
+
+        return true;
+      }).catch((err) => {
+        console.log(err);
+        return false;
+      });
+
+      return status;
+    },
     async getAllData() {
       const getConfirmedCasesSuccess = await this.getConfirmedCases();
       const getHighRiskAreaSuccess = await this.getHighRiskArea();
       const getAffectedTransportSuccess = await this.getAffectedTransport();
+      const getLatestSuitationSuccess = await this.getLatestSuitation();
 
-      if (getConfirmedCasesSuccess && getHighRiskAreaSuccess && getAffectedTransportSuccess) {
+      if (getConfirmedCasesSuccess
+        && getHighRiskAreaSuccess
+        && getAffectedTransportSuccess
+        && getLatestSuitationSuccess
+      ) {
         this.pageReady = true;
       } else {
         this.pageError = true;
@@ -159,11 +182,6 @@ export default {
   },
   mounted() {
     this.getAllData();
-  },
-  computed: {
-    lastUpdate() {
-      return formatDate(this.fetchTime);
-    }
   }
 };
 </script>

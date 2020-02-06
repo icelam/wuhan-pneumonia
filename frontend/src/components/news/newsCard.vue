@@ -11,7 +11,7 @@
       </div>
 
       <h4 class="news-card__title">{{articleTitle}}</h4>
-      <p class="news-card__description">{{articleDescription}}</p>
+      <!-- <p class="news-card__description">{{articleDescription}}</p> -->
       <div class="news-card__info">
         <span class="news-card__source" v-if="articleSource">
           {{articleSource}}

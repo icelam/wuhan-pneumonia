@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.21.0](https://github.com/icelam/wuhan-pneumonia/compare/v1.20.0...v1.21.0) (2020-02-06)
+
+
+### Features
+
+* **backend:** switch new source to google news feed ([1225daa](https://github.com/icelam/wuhan-pneumonia/commit/1225daaa8882bf230256637f9a18c753a9444ece))
+* **frontend:** remove description from news card ([5f1d266](https://github.com/icelam/wuhan-pneumonia/commit/5f1d266a9d67aee473c2d8ed45f37f04b685a0d0))
+
+
+### Bug Fixes
+
+* **frontend:** wrongly mapped css class name ([9e83aca](https://github.com/icelam/wuhan-pneumonia/commit/9e83aca92da405518c7c8e3134f02bbdaf6485f9))
+
 ## [1.20.0](https://github.com/icelam/wuhan-pneumonia/compare/v1.19.0...v1.20.0) (2020-02-05)
 
 

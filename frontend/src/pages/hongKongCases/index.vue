@@ -9,9 +9,19 @@
     <h2>香港確診案例</h2>
     <table-card
       class="confirmed-case-table-card"
-      :tableHead="['#', '日期', '性別', '年齡', '入住醫院', '狀況']"
+      :tableHead="['#', '確診日期', '發病日期', '性別', '年齡', '入住醫院', '狀況', '是否香港居民', '個案分類']"
       :tableData="confirmedCasesData"
-      :cellAlignment="['left', 'center', 'center', 'center', 'center', 'center']"
+      :cellAlignment="[
+        'left',
+        'center',
+        'center',
+        'center',
+        'center',
+        'center',
+        'center',
+        'center',
+        'center'
+      ]"
       enableSort
       :defaultSortColumnIndex="0"
       defaultSortDirection="desc"
@@ -104,11 +114,12 @@ export default {
 
         // Format date
         const formattedRows = rows.map((row) => {
-          const [id, date, ...caseDetails] = row;
+          const [id, identifiedDate, illnessDate, ...caseDetails] = row;
 
           return [
             id,
-            formatDateWithSlash(date),
+            formatDateWithSlash(identifiedDate),
+            formatDateWithSlash(illnessDate),
             ...caseDetails
           ];
         });

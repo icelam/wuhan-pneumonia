@@ -64,7 +64,11 @@ export default {
     formatStatistics() {
       const { data: statistics, lastUpdate } = this.latestSuitationData;
 
-      const formattedLatestSuitation = statistics.map((s) => this.getStatisticLabelAndColor(s));
+      const formattedLatestSuitation = statistics.filter(
+        (s) => ['確診個案', '排除個案', '仍然住院接受檢查個案', '符合呈報準則個案'].includes(s.label)
+      ).map(
+        (s) => this.getStatisticLabelAndColor(s)
+      );
 
       // Sort with specific order
       const colorOrder = ['red', 'yellow', 'green', 'grey'];

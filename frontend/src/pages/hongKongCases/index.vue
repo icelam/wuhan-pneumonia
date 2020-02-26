@@ -7,6 +7,7 @@
 
     <!-- Hong Kong Cases Data -->
     <h2>香港確診案例</h2>
+    <div class="remarks" v-if="confirmedCaseSummary">{{ confirmedCaseSummary }}</div>
     <table-card
       class="confirmed-case-table-card"
       :tableHead="['#', '確診日期', '發病日期', '性別', '年齡', '入住醫院', '狀況', '是否香港居民', '個案分類','確診 / 疑似個案']"
@@ -234,6 +235,27 @@ export default {
   },
   mounted() {
     this.getAllData();
+  },
+  computed: {
+    confirmedCaseSummary() {
+      const { data: statistics } = this.latestSuitationData;
+      const summaryKeys = ['疑似個案', '出院', '死亡'];
+      const confirmedSummary = statistics.filter(
+        (s) => summaryKeys.includes(s.label)
+      );
+
+      const summaryList = confirmedSummary.filter(
+        (s) => s.count > 0
+      ).map(
+        (s) => `${s.count} 宗${s.label}`
+      );
+
+      const summaryString = summaryList.join('，');
+
+      return summaryString
+        ? `香港案例中總共有 ${summaryString}`
+        : '';
+    }
   }
 };
 </script>

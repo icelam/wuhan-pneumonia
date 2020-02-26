@@ -9,10 +9,11 @@
     <h2>香港確診案例</h2>
     <table-card
       class="confirmed-case-table-card"
-      :tableHead="['#', '確診日期', '發病日期', '性別', '年齡', '入住醫院', '狀況', '是否香港居民', '個案分類']"
+      :tableHead="['#', '確診日期', '發病日期', '性別', '年齡', '入住醫院', '狀況', '是否香港居民', '個案分類','確診 / 疑似個案']"
       :tableData="confirmedCasesData"
       :cellAlignment="[
         'left',
+        'center',
         'center',
         'center',
         'center',
@@ -29,7 +30,7 @@
     <!-- /Hong Kong Cases Data -->
 
     <!-- High Risk Area Data -->
-    <h2>過去 14 天內確診患者逗留大廈</h2>
+    <h2>過去 14 天內確診 / 疑似個案逗留大廈</h2>
     <table-card
       class="high-risk-area-table-card"
       :tableHead="['地區', '大廈', '最後逗留日期', '地圖']"
@@ -42,7 +43,7 @@
     <!-- /High Risk Area Data -->
 
     <!-- Affected Transport Data -->
-    <h2>過去 14 天內確診患者乘搭的航班 / 火車</h2>
+    <h2>過去 14 天內確診 / 疑似個案乘搭的航班、火車、船、車</h2>
     <table-card
       class="affected-transport-table-card"
       :tableHead="['航班 / 火車編號', '起點及終點', '乘搭日期']"

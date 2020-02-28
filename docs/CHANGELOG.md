@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.22.0](https://github.com/icelam/wuhan-pneumonia/compare/v1.21.0...v1.22.0) (2020-02-28)
+
+
+### Features
+
+* **frontend:** modify HK latest sutiation UI due to API changes ([d7cb332](https://github.com/icelam/wuhan-pneumonia/commit/d7cb332c184f48f4310396fdb9a1cbdca818e0a5))
+
+
+### Bug Fixes
+
+* **frontend:** fix missing column label in HK confirmed case table ([f397782](https://github.com/icelam/wuhan-pneumonia/commit/f3977821e30863125f40be7404b2b0d7a9a96615))
+* **frontend:** fix NaN on formatting non DD/MM/YYYY string ([d78380b](https://github.com/icelam/wuhan-pneumonia/commit/d78380b34e51b228e56b68f7c224cb2b0a0c4681))
+* **frontend:** hints for empty data table ([cdb046f](https://github.com/icelam/wuhan-pneumonia/commit/cdb046f1f5f56482594f6f86416aa5ad41228443))
+* **frontend:** missing column headers and update data table title ([75f0c74](https://github.com/icelam/wuhan-pneumonia/commit/75f0c7426522c624e69f059c1dd9445308f6936e))
+
 ## [1.21.0](https://github.com/icelam/wuhan-pneumonia/compare/v1.20.0...v1.21.0) (2020-02-06)
 
 

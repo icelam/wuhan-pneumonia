@@ -167,7 +167,7 @@ export default {
           return [
             transport,
             fromTo,
-            formatDateWithSlash(date)
+            date
           ];
         });
 

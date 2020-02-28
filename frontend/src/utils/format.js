@@ -8,6 +8,11 @@ export const zeroPad = (n, x) => {
 
 // Convert '20/01/2020' to '1 月 20 日'
 export const formatDateWithSlash = (date) => {
+  const validDateString = /^\d{2}\/\d{2}\/\d{4}$/.test(date);
+  if (!validDateString) {
+    return date;
+  }
+
   const datePart = date.split('/');
   return datePart.length > 1 ? `${parseInt(datePart[1], 10)} 月 ${parseInt(datePart[0], 10)} 日` : date;
 };

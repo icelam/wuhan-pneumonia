@@ -1,40 +1,49 @@
 <template>
-  <div
-    :class="[
-      'data-table',
-      `data-table--${tableHead ? 'even' : 'odd'}-highlight`,
-      `data-table--${enableSort ? 'sortable' : 'non-sortable'}`
-    ]"
-  >
-    <div class="data-table__head" v-if="tableHead">
+  <div>
+    <div
+      :class="[
+        'data-table',
+        `data-table--${tableHead ? 'even' : 'odd'}-highlight`,
+        `data-table--${enableSort ? 'sortable' : 'non-sortable'}`
+      ]"
+    >
+      <div class="data-table__head" v-if="tableHead">
+        <div
+          :class="[
+            'data-table__cell',
+            `data-table__cell--${cellAlignment[i] || 'left'}`,
+            `${currentSortColumn === i
+                ? `data-table__cell--sort-${currentSortDirection}`
+                : ''
+            }`
+          ]"
+          v-for="(head, i) in tableHead"
+          :key="i"
+          v-on:click="sortByColumn(i)"
+        >
+          {{head}}
+        </div>
+      </div>
       <div
-        :class="[
-          'data-table__cell',
-          `data-table__cell--${cellAlignment[i] || 'left'}`,
-          `${currentSortColumn === i
-              ? `data-table__cell--sort-${currentSortDirection}`
-              : ''
-          }`
-        ]"
-        v-for="(head, i) in tableHead"
+        class="data-table__row"
+        v-for="(row, i) in sortedTableData"
         :key="i"
-        v-on:click="sortByColumn(i)"
+        v-on:click="$emit('rowClicked', { index: i, data: row })"
       >
-        {{head}}
+        <div
+          :class="['data-table__cell', `data-table__cell--${cellAlignment[i] || 'left'}`]"
+          v-for="(cells, i) in row"
+          :key="i"
+          v-html="cells"
+        >
+        </div>
       </div>
     </div>
-    <div class="data-table__row"
-      v-for="(row, i) in sortedTableData"
-      :key="i"
-      v-on:click="$emit('rowClicked', { index: i, data: row })"
+    <div
+      v-if="!sortedTableData || !sortedTableData.length"
+      class="data-table__no-data"
     >
-      <div
-        :class="['data-table__cell', `data-table__cell--${cellAlignment[i] || 'left'}`]"
-        v-for="(cells, i) in row"
-        :key="i"
-        v-html="cells"
-      >
-      </div>
+      暫時未有資料
     </div>
   </div>
 </template>
@@ -96,7 +105,7 @@ export default {
   computed: {
     sortedTableData() {
       // Skip sorting when not enabled
-      if (!this.enableSort || this.currentSortColumn === -1) {
+      if (!this.tableData.length || !this.enableSort || this.currentSortColumn === -1) {
         return this.tableData;
       }
 

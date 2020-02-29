@@ -4,6 +4,7 @@ import liveDataPage from '@pages/liveData/index.vue';
 import historicalDataPage from '@pages/historicalData/index.vue';
 import preventionMethodPage from '@pages/preventionMethod/index.vue';
 import hongKongCasesPage from '@pages/hongKongCases/index.vue';
+import homeConfineesPage from '@pages/homeConfinees/index.vue';
 import aeWaitingTimePage from '@pages/aeWaitingTime/index.vue';
 import pharmacyListPage from '@pages/pharmacyList/index.vue';
 import relatedNewsPage from '@pages/relatedNews/index.vue';
@@ -31,6 +32,11 @@ const router = new Router({
       path: routes.hongKongCases,
       name: 'Hong Kong Cases Page',
       component: hongKongCasesPage
+    },
+    {
+      path: routes.homeConfinees,
+      name: 'Home Confinees Page',
+      component: homeConfineesPage
     },
     {
       path: routes.aeWaitingTime,

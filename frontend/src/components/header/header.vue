@@ -38,6 +38,15 @@
         </li>
         <li>
           <router-link
+            :to="appRoutes.homeConfinees"
+            v-on:click.native="closeNav"
+            class="nav__link"
+            >
+            家居檢疫
+          </router-link>
+        </li>
+        <li>
+          <router-link
             :to="appRoutes.pharmacyList"
             v-on:click.native="closeNav"
             class="nav__link"
@@ -63,7 +72,7 @@
             新聞
           </router-link>
         </li>
-        <li>
+        <!-- <li>
           <router-link
             :to="appRoutes.preventionMethod"
             v-on:click.native="closeNav"
@@ -71,7 +80,7 @@
             >
             防疫資訊
           </router-link>
-        </li>
+        </li> -->
       </ul>
       <!-- /Nav -->
 

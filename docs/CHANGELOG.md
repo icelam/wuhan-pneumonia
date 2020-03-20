@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.23.0](https://github.com/icelam/wuhan-pneumonia/compare/v1.22.0...v1.23.0) (2020-03-20)
+
+
+### Features
+
+* **backend:** switch to new home confinees data source ([bfdaaee](https://github.com/icelam/wuhan-pneumonia/commit/bfdaaeeb562d6006315e76c6cd5cca168616309b))
+* **frontend:** separate page for home confinees data ([099601b](https://github.com/icelam/wuhan-pneumonia/commit/099601b1985d492737e6ed1a09eab18a78689737))
+
+
+### Bug Fixes
+
+* **backend:** fix empty scrap of live data ([c05548b](https://github.com/icelam/wuhan-pneumonia/commit/c05548b17d20b2562532d36c7ae7f07bea969d2e))
+
 ## [1.22.0](https://github.com/icelam/wuhan-pneumonia/compare/v1.21.0...v1.22.0) (2020-02-28)
 
 

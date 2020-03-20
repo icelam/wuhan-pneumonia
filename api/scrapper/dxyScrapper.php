@@ -17,7 +17,7 @@ class dxyScrapper extends baseScrapper {
       // Extract data needed
       $getAreaStat = $this->jsonExtract("getAreaStat", $data);
       $getStatisticsService = $this->jsonExtract("getStatisticsService", $data);
-      $getListByCountryTypeService2 = $this->jsonExtract("getListByCountryTypeService2", $data);
+      $getListByCountryTypeService2 = $this->jsonExtract("getListByCountryTypeService2true", $data);
 
       if (!empty($getAreaStat) && !empty($getStatisticsService) && !empty($getListByCountryTypeService2)) {
         // Temp hack for old service workers

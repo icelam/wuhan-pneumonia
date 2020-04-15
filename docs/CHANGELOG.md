@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.23.1](https://github.com/icelam/wuhan-pneumonia/compare/v1.23.0...v1.23.1) (2020-04-15)
+
+
+### Bug Fixes
+
+* **backend:** response to change in data source url from data.gov.hk ([e03fc02](https://github.com/icelam/wuhan-pneumonia/commit/e03fc02b37e375d08bb112ac8ad3118dfcfceb44))
+* **frontend:** fix NaN in Hong Kong latest suitation ([e4f2e4f](https://github.com/icelam/wuhan-pneumonia/commit/e4f2e4f22806cd78069d0349091763d89372c82a))
+
 ## [1.23.0](https://github.com/icelam/wuhan-pneumonia/compare/v1.22.0...v1.23.0) (2020-03-20)
 
 

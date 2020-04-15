@@ -3,7 +3,7 @@ require_once('baseScrapper.php');
 
 class hkLatestSuitationScrapper extends baseScrapper {
   public function __construct() {
-    $this->scrap_url = "https://www.chp.gov.hk/files/misc/latest_situation_of_reported_cases_wuhan_chi.csv";
+    $this->scrap_url = "https://www.chp.gov.hk/files/misc/latest_situation_of_reported_cases_covid_19_chi.csv";
     $this->store_folder = "scraps";
     $this->store_filename = "latest-suitation.csv";
   }

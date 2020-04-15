@@ -6,7 +6,9 @@ export const generateMapTableData = (data) => {
     return [];
   }
 
-  const tableData = data.map((p) => {
+  const sortedData = [...data].sort((a, b) => (a.confirmedCount > b.confirmedCount ? -1 : 1));
+
+  const tableData = sortedData.map((p) => {
     const {
       confirmedCount,
       suspectedCount,

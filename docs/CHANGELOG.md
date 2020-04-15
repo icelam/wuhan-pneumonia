@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.24.0](https://github.com/icelam/wuhan-pneumonia/compare/v1.23.1...v1.24.0) (2020-04-15)
+
+
+### Features
+
+* **frontend:** sort map table data according to confirmedCount ([dce3659](https://github.com/icelam/wuhan-pneumonia/commit/dce36599f3e003d176da76b21353059419ce6da6))
+
 ### [1.23.1](https://github.com/icelam/wuhan-pneumonia/compare/v1.23.0...v1.23.1) (2020-04-15)
 
 

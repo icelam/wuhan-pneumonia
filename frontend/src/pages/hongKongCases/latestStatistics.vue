@@ -43,15 +43,15 @@ export default {
 
       const displayLabel = label === '仍然住院接受檢查個案'
         ? '宗住院檢查'
-        : label === '符合呈報準則個案'
-          ? '宗符合呈報準則'
+        : label === '死亡'
+          ? '宗死亡個案'
           : `宗${label}`;
 
       const color = label === '確診個案'
         ? 'red'
-        : label === '排除個案'
+        : label === '排除個案' || label === '出院'
           ? 'green'
-          : label === '仍然住院接受檢查個案'
+          : label === '仍然住院接受檢查個案' || label === '疑似個案'
             ? 'yellow'
             : 'grey';
 
@@ -65,7 +65,7 @@ export default {
       const { data: statistics, lastUpdate } = this.latestSuitationData;
 
       const formattedLatestSuitation = statistics.filter(
-        (s) => ['確診個案', '排除個案', '仍然住院接受檢查個案', '符合呈報準則個案'].includes(s.label)
+        (s) => ['確診個案', '出院', '疑似個案', '死亡'].includes(s.label)
       ).map(
         (s) => this.getStatisticLabelAndColor(s)
       );

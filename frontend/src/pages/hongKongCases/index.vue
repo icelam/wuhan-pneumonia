@@ -98,6 +98,10 @@ export default {
   methods: {
     getConfirmedCases() {
       const status = hongKongDataService.getConfirmedCases().then(({ data }) => {
+        if (data.status && data.status === 500) {
+          return false;
+        }
+
         const [, ...rows] = data;
 
         // Format date
@@ -121,6 +125,10 @@ export default {
     },
     getHighRiskArea() {
       const status = hongKongDataService.getHighRiskArea().then(({ data }) => {
+        if (data.status && data.status === 500) {
+          return false;
+        }
+
         const [, ...rows] = data;
 
         // Format date and add google map link
@@ -144,6 +152,10 @@ export default {
     },
     getAffectedTransport() {
       const status = hongKongDataService.getAffectedTransport().then(({ data }) => {
+        if (data.status && data.status === 500) {
+          return false;
+        }
+
         const [, ...rows] = data;
 
         // Format date
@@ -166,6 +178,10 @@ export default {
     },
     getLatestSuitation() {
       const status = hongKongDataService.getLatestSuitation().then(({ data }) => {
+        if (data.status && data.status === 500) {
+          return false;
+        }
+
         this.latestSuitationData = data;
 
         return true;

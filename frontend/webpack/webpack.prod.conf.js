@@ -49,7 +49,7 @@ module.exports = merge(baseWebpackConfig, {
     new Webpack.DefinePlugin(clientEnv.stringified),
     new Webpack.optimize.ModuleConcatenationPlugin(),
     new MiniCssExtractPlugin({
-      filename: 'assets/css/bundle.css'
+      filename: 'assets/css/bundle.[chunkhash:8].css'
     }),
     new PrerenderSpaPlugin({
       staticDir: Path.join(__dirname, '../dist'),

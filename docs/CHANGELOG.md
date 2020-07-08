@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.24.1](https://github.com/icelam/wuhan-pneumonia/compare/v1.24.0...v1.24.1) (2020-07-08)
+
+
+### Bug Fixes
+
+* **backend:** thrown error on failed to return API output ([0b61699](https://github.com/icelam/wuhan-pneumonia/commit/0b6169987fcc663b7c271c093b201339d4c18821))
+
 ## [1.24.0](https://github.com/icelam/wuhan-pneumonia/compare/v1.23.1...v1.24.0) (2020-04-15)
 
 

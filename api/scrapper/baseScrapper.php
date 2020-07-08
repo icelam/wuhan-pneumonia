@@ -47,9 +47,9 @@ class baseScrapper {
         fclose($fp);
 
         return $api_output;
-      } else {
-        throw new Exception('Scrap data is empty.');
       }
+      
+      throw new Exception('Scrap data is empty or has unknown error.');
     } catch (Exception $e) {
       // Show backup data
       if(file_exists($this->store_folder . "/" . $this->store_filename)) {

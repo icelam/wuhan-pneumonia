@@ -9,12 +9,12 @@
     "dev": "webpack-dev-server --open --config webpack/webpack.dev.conf.js",
     "lint": "./node_modules/.bin/eslint 'src/**/*.js'; exit 0;",
     "lint:entry": "./node_modules/.bin/eslint --no-ignore",
-    "first-release": "standard-version --commit-all --tag-prefix v --first-release --infile ../docs/CHANGELOG.md",
-    "release": "standard-version --commit-all --tag-prefix v --infile ../docs/CHANGELOG.md"
+    "first-release": "standard-version --commit-all --tag-prefix v --first-release --infile ../CHANGELOG.md",
+    "release": "standard-version --commit-all --tag-prefix v --infile ../CHANGELOG.md"
   },
   "standard-version": {
     "scripts": {
-      "postchangelog": "replace 'bitbucket.org' 'github.com' ../docs/CHANGELOG.md"
+      "postchangelog": "replace 'bitbucket.org' 'github.com' ../CHANGELOG.md"
     }
   },
   "devDependencies": {

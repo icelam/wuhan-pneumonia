@@ -27,4 +27,4 @@
 * [Setup Guide](docs/DEVELOPMENT_NOTES.md)
 * [References](docs/REFERENCES.md)
 * [Roadmap](docs/ROADMAP.md)
-* [Change Log](docs/CHANGELOG.md)
+* [Change Log](CHANGELOG.md)

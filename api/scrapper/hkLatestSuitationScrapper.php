@@ -29,9 +29,23 @@ class hkLatestSuitationScrapper extends baseScrapper {
         }
       }
 
+      $formattedLastUpdateDate = $latestRecord[0];
+      if(preg_match('/^\d{2}\/\d{2}\/\d{4}$/', $latestRecord[0])){
+        $date = str_replace('/', '-', $latestRecord[0]);
+        $formattedLastUpdateDate = date('Y-m-d', strtotime($date));
+      }
+
+      if (!empty($formattedLastUpdateDate) && !empty($latestRecord[1])) {
+        $lastUpdate = \DateTime::createFromFormat('Y-m-d H:i', "$formattedLastUpdateDate $latestRecord[1]")->getTimestamp();
+      } else if ($formattedLastUpdateDate) {
+        $lastUpdate = \DateTime::createFromFormat('Y-m-d', "$formattedLastUpdateDate")->getTimestamp();
+      } else {
+        $lastUpdate = null;
+      }
+
       $output = array(
         "data"=>$recordPairs, 
-        "lastUpdate"=> \DateTime::createFromFormat('d/m/Y H:i', "$latestRecord[0] $latestRecord[1]")->getTimestamp()
+        "lastUpdate"=> $lastUpdate
       );
 
       $api_output = json_encode($output);

@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.24.2](https://github.com/icelam/wuhan-pneumonia/compare/v1.24.1...v1.24.2) (2020-07-21)
+
+
+### Bug Fixes
+
+* **backend:** date format change in hk latest suitation data source ([bef7302](https://github.com/icelam/wuhan-pneumonia/commit/bef7302155118c87465a65f07da877a2dd8f8ecd))
+
 ### [1.24.1](https://github.com/icelam/wuhan-pneumonia/compare/v1.24.0...v1.24.1) (2020-07-08)
 
 

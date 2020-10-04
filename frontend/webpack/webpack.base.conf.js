@@ -1,5 +1,5 @@
 /* eslint "import/no-extraneous-dependencies": ["error", {"optionalDependencies": false} ] */
-const Path = require('path');
+const path = require('path');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -8,10 +8,10 @@ const VueLoaderPlugin = require('vue-loader/lib/plugin');
 
 module.exports = {
   entry: {
-    app: [Path.resolve(__dirname, '../src/index.js')]
+    app: [path.resolve(__dirname, '../src/index.js')]
   },
   output: {
-    path: Path.join(__dirname, '../dist'),
+    path: path.join(__dirname, '../dist'),
     filename: 'assets/js/[name].js'
   },
   optimization: {
@@ -28,15 +28,21 @@ module.exports = {
   },
   plugins: [
     new CleanWebpackPlugin({
-      cleanOnceBeforeBuildPatterns: [Path.join(__dirname, '../dist/**/*')]
+      cleanOnceBeforeBuildPatterns: [path.join(__dirname, '../dist/**/*')]
     }),
-    new CopyWebpackPlugin([
-      { from: Path.resolve(__dirname, '../src/assets/images'), to: 'assets/images', ignore: ['**/.DS_Store'] },
-      { from: Path.resolve(__dirname, '../src/manifest.json'), to: './' }
-    ]),
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: path.resolve(__dirname, '../src/assets/images'),
+          to: 'assets/images',
+          globOptions: { ignore: ['**/.DS_Store'] }
+        },
+        { from: path.resolve(__dirname, '../src/manifest.json'), to: './' }
+      ]
+    }),
     new VueLoaderPlugin(),
     new HtmlWebpackPlugin({
-      template: Path.resolve(__dirname, '../src/index.html'),
+      template: path.resolve(__dirname, '../src/index.html'),
       minify: {
         removeComments: true,
         collapseWhitespace: true,
@@ -48,18 +54,18 @@ module.exports = {
   resolve: {
     extensions: ['*', '.js', '.vue', '.json', '.scss'],
     alias: {
-      '~': Path.resolve(__dirname, '../src'),
-      '@app': Path.resolve(__dirname, '../src/App.vue'),
-      '@components': Path.resolve(__dirname, '../src/components'),
-      '@constants': Path.resolve(__dirname, '../src/constants'),
-      '@data': Path.resolve(__dirname, '../src/data'),
-      '@images': Path.resolve(__dirname, '../src/assets/images'),
-      '@pages': Path.resolve(__dirname, '../src/pages'),
-      '@polyfills': Path.resolve(__dirname, '../src/polyfills'),
-      '@router': Path.resolve(__dirname, '../src/router'),
-      '@style': Path.resolve(__dirname, '../src/assets/scss'),
-      '@services': Path.resolve(__dirname, '../src/services'),
-      '@utils': Path.resolve(__dirname, '../src/utils')
+      '~': path.resolve(__dirname, '../src'),
+      '@app': path.resolve(__dirname, '../src/App.vue'),
+      '@components': path.resolve(__dirname, '../src/components'),
+      '@constants': path.resolve(__dirname, '../src/constants'),
+      '@data': path.resolve(__dirname, '../src/data'),
+      '@images': path.resolve(__dirname, '../src/assets/images'),
+      '@pages': path.resolve(__dirname, '../src/pages'),
+      '@polyfills': path.resolve(__dirname, '../src/polyfills'),
+      '@router': path.resolve(__dirname, '../src/router'),
+      '@style': path.resolve(__dirname, '../src/assets/scss'),
+      '@services': path.resolve(__dirname, '../src/services'),
+      '@utils': path.resolve(__dirname, '../src/utils')
     }
   },
   module: {
@@ -72,7 +78,7 @@ module.exports = {
         test: /\.(png|jpe?g|gif|svg|ico)(\?.*)?$/,
         loader: 'url-loader',
         exclude: [
-          Path.resolve(__dirname, '../src/assets/fonts')
+          path.resolve(__dirname, '../src/assets/fonts')
         ],
         options: {
           limit: -1,
@@ -92,7 +98,7 @@ module.exports = {
         test: /\.(woff2?|eot|ttf|otf|svg)(\?.*)?$/,
         loader: 'url-loader',
         exclude: [
-          Path.resolve(__dirname, '../src/assets/images')
+          path.resolve(__dirname, '../src/assets/images')
         ],
         options: {
           limit: -1,

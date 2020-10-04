@@ -1,8 +1,8 @@
 /* eslint "import/no-extraneous-dependencies": ["error", {"optionalDependencies": false} ] */
-const Path = require('path');
+const path = require('path');
 const fs = require('fs');
 const Webpack = require('webpack');
-const merge = require('webpack-merge');
+const { merge } = require('webpack-merge');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const PrerenderSpaPlugin = require('prerender-spa-plugin');
 const WorkboxPlugin = require('workbox-webpack-plugin');
@@ -20,9 +20,9 @@ const prerenderPath = Object.keys(routes).map((key) => routes[key]);
 
 // https://github.com/bkeepers/dotenv#what-other-env-files-can-i-use
 const dotenvFiles = [
-  Path.resolve(__dirname, '../.env.production.local'),
-  Path.resolve(__dirname, '../.env.production'),
-  Path.resolve(__dirname, '../.env')
+  path.resolve(__dirname, '../.env.production.local'),
+  path.resolve(__dirname, '../.env.production'),
+  path.resolve(__dirname, '../.env')
 ].filter((dotenvFile) => fs.existsSync(dotenvFile));
 
 console.log(`${dotenvFiles[0]} will be used.\n`);
@@ -40,7 +40,7 @@ module.exports = merge(baseWebpackConfig, {
   stats: 'errors-only',
   bail: true,
   output: {
-    path: Path.join(__dirname, `../dist${process.env.VUE_APP_CONTEXT}`),
+    path: path.join(__dirname, `../dist${process.env.VUE_APP_CONTEXT}`),
     filename: 'assets/js/[name].[chunkhash:8].js',
     chunkFilename: 'assets/js/[name].[chunkhash:8].chunk.js',
     publicPath: process.env.VUE_APP_CONTEXT
@@ -52,9 +52,9 @@ module.exports = merge(baseWebpackConfig, {
       filename: 'assets/css/bundle.[chunkhash:8].css'
     }),
     new PrerenderSpaPlugin({
-      staticDir: Path.join(__dirname, '../dist'),
-      indexPath: Path.join(__dirname, `../dist${process.env.VUE_APP_CONTEXT}index.html`),
-      outputDir: Path.join(__dirname, `../dist${process.env.VUE_APP_CONTEXT}`),
+      staticDir: path.join(__dirname, '../dist'),
+      indexPath: path.join(__dirname, `../dist${process.env.VUE_APP_CONTEXT}index.html`),
+      outputDir: path.join(__dirname, `../dist${process.env.VUE_APP_CONTEXT}`),
       routes: prerenderPath,
       renderer: new Renderer({
         renderAfterElementExists: '.page-content',
@@ -83,7 +83,7 @@ module.exports = merge(baseWebpackConfig, {
     }),
     new BundleAnalyzerPlugin({
       analyzerMode: 'static',
-      reportFilename: Path.join(__dirname, '../bundle-analyzer-plugin-report.html')
+      reportFilename: path.join(__dirname, '../bundle-analyzer-plugin-report.html')
     })
   ],
   module: {

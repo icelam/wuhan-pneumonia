@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.25.0](https://github.com/icelam/wuhan-pneumonia/compare/v1.24.3...v1.25.0) (2020-10-04)
+
+
+### Features
+
+* **frontend:** add pagination support to data table ([5939aae](https://github.com/icelam/wuhan-pneumonia/commit/5939aae55dd34ab86418c3f18c8fe1f65aae071b))
+
 ### [1.24.2](https://github.com/icelam/wuhan-pneumonia/compare/v1.24.1...v1.24.2) (2020-07-21)
 
 

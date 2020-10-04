@@ -10,6 +10,8 @@
       enableSort
       :defaultSortColumnIndex="0"
       defaultSortDirection="asc"
+      enablePagination
+      :pageSize="15"
     />
     <!-- /Building of Home Confinees Data -->
 

@@ -27,6 +27,8 @@
       enableSort
       :defaultSortColumnIndex="0"
       defaultSortDirection="desc"
+      enablePagination
+      :pageSize="15"
     />
     <!-- /Hong Kong Cases Data -->
 
@@ -40,6 +42,8 @@
       enableSort
       :defaultSortColumnIndex="2"
       defaultSortDirection="desc"
+      enablePagination
+      :pageSize="15"
     />
     <!-- /High Risk Area Data -->
 
@@ -53,6 +57,8 @@
       enableSort
       :defaultSortColumnIndex="2"
       defaultSortDirection="desc"
+      enablePagination
+      :pageSize="15"
     />
     <!-- /Affected Transport Data -->
 

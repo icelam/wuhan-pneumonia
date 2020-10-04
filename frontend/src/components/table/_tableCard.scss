@@ -1,7 +1,41 @@
 @import '~@style/_variables';
+@import '~@style/_colors';
 
 .table-card {
   &::v-deep .row {
     overflow: auto;
+  }
+}
+
+.table-card-pagination {
+  margin: 1rem 0;
+  text-align: center;
+
+  @media #{$mobile} {
+    font-size: 0.8125rem;
+  }
+
+  .table-card-pagination__link {
+    cursor: pointer;
+    color: $color-pagination-link;
+    text-decoration: none;
+    margin: 0 0.5rem;
+
+    &:hover,
+    &:focus,
+    &:active {
+      text-decoration: underline;
+    }
+
+    &--disabled {
+      color: $color-pagination-link-disabled;
+      cursor: not-allowed;
+
+      &:hover,
+      &:focus,
+      &:active {
+        text-decoration: none;
+      }
+    }
   }
 }

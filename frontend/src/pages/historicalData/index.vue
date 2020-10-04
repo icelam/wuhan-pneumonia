@@ -11,6 +11,8 @@
       enableSort
       :defaultSortColumnIndex="0"
       defaultSortDirection="desc"
+      enablePagination
+      :pageSize="15"
     />
     <!-- /Historical Data -->
 

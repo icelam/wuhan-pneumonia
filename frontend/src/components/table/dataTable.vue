@@ -26,7 +26,7 @@
       </div>
       <div
         class="data-table__row"
-        v-for="(row, i) in sortedTableData"
+        v-for="(row, i) in paginatedTableData"
         :key="i"
         v-on:click="$emit('rowClicked', { index: i, data: row })"
       >
@@ -40,7 +40,7 @@
       </div>
     </div>
     <div
-      v-if="!sortedTableData || !sortedTableData.length"
+      v-if="!paginatedTableData || !paginatedTableData.length"
       class="data-table__no-data"
     >
       暫時未有資料
@@ -80,6 +80,21 @@ export default {
       type: String, // TODO: type checking, only allow 'asc' or 'desc'
       required: false,
       default: 'asc'
+    },
+    enablePagination: {
+      type: Boolean,
+      required: false,
+      default: false
+    },
+    pageSize: {
+      type: Number,
+      required: false,
+      default: 10
+    },
+    currentPage: {
+      type: Number,
+      required: false,
+      default: 1
     }
   },
   data() {
@@ -144,6 +159,14 @@ export default {
       });
 
       return clonedTableData;
+    },
+    paginatedTableData() {
+      return this.enablePagination
+        ? this.sortedTableData.slice(
+          ((this.currentPage - 1) * this.pageSize),
+          ((this.currentPage - 1) * this.pageSize + this.pageSize)
+        )
+        : this.sortedTableData;
     }
   }
 };

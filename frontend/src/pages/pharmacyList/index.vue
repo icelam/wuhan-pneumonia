@@ -13,6 +13,8 @@
       enableSort
       :defaultSortColumnIndex="-1"
       defaultSortDirection="desc"
+      enablePagination
+      :pageSize="15"
     />
     <!-- /Bad Pharmacy List -->
 

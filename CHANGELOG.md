@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.25.1](https://github.com/icelam/wuhan-pneumonia/compare/v1.25.0...v1.25.1) (2020-10-26)
+
+
+### Bug Fixes
+
+* **backend:** fix error due to incorrect ha waiting time url ([1ac1fba](https://github.com/icelam/wuhan-pneumonia/commit/1ac1fba8fcbde110f080ca9c586233e76fd43ab9))
+
 ## [1.25.0](https://github.com/icelam/wuhan-pneumonia/compare/v1.24.3...v1.25.0) (2020-10-04)
 
 

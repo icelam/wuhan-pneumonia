@@ -28,7 +28,7 @@ class baseScrapper {
       if (!empty($api_output) && !is_null($api_output) && $api_output !== 'null') {
         // Backup scrap data for future use
         if(!is_dir($this->store_folder)){
-          if (!mkdir($this->store_folder, 0777, true)) {
+          if (!mkdir($this->store_folder, 0755, true)) {
             // Failed to create folder, skip saving
             return $api_output;
           }
@@ -56,7 +56,8 @@ class baseScrapper {
         $backup_data = file_get_contents($this->store_folder . "/" . $this->store_filename);
         return $backup_data;
       }
-        
+      
+      http_response_code(500);
       return '{"status": 500, "reason": "' . $e->getMessage() . '"}';
     }
   }

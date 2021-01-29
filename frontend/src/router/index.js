@@ -1,7 +1,6 @@
 import Router from 'vue-router';
 import Vue from 'vue';
 import liveDataPage from '@pages/liveData/index.vue';
-import historicalDataPage from '@pages/historicalData/index.vue';
 import preventionMethodPage from '@pages/preventionMethod/index.vue';
 import hongKongCasesPage from '@pages/hongKongCases/index.vue';
 import homeConfineesPage from '@pages/homeConfinees/index.vue';
@@ -22,11 +21,6 @@ const router = new Router({
       path: routes.home,
       name: 'Live Data Page',
       component: liveDataPage
-    },
-    {
-      path: routes.historicalData,
-      name: 'Historical Data Page',
-      component: historicalDataPage
     },
     {
       path: routes.hongKongCases,

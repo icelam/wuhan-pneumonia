@@ -28,7 +28,7 @@
         class="data-table__row"
         v-for="(row, i) in paginatedTableData"
         :key="i"
-        v-on:click="$emit('rowClicked', { index: i, data: row })"
+        v-on:click="$emit('row-clicked', { index: i, data: row })"
       >
         <div
           :class="['data-table__cell', `data-table__cell--${cellAlignment[i] || 'left'}`]"

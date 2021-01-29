@@ -9,7 +9,7 @@
           class="map-table"
           :tableData="provinceTableData"
           :cellAlignment="['left', 'left']"
-          v-on:rowClicked="rowClickHandler"
+          v-on:row-clicked="rowClickHandler"
         />
       </div>
     </div>

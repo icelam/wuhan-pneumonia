@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.26.0](https://github.com/icelam/wuhan-pneumonia/compare/v1.25.1...v1.26.0) (2021-01-29)
+
+
+### Features
+
+* add maskable icon in manifest ([b5d411f](https://github.com/icelam/wuhan-pneumonia/commit/b5d411fe4fd2d782278f01428e6aae1a27cb8400))
+* **frontend:** remove broken historical data page ([66f1e48](https://github.com/icelam/wuhan-pneumonia/commit/66f1e4863ada695322e1ebb127b9f791ef6ec790))
+
+
+### Bug Fixes
+
+* use kebab-case in custom event name ([dacbc05](https://github.com/icelam/wuhan-pneumonia/commit/dacbc05db564b17c774d383f5f8fd4c15ed2c5c8))
+
 ### [1.25.1](https://github.com/icelam/wuhan-pneumonia/compare/v1.25.0...v1.25.1) (2020-10-26)
 
 

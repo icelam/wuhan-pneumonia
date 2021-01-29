@@ -1,6 +1,6 @@
 {
   "name": "wuhan-pneumonia",
-  "version": "1.25.1",
+  "version": "1.26.0",
   "description": "新型冠狀病毒肺炎（COVID-19）感染即時資訊",
   "private": true,
   "scripts": {

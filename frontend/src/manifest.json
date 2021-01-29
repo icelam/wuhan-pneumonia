@@ -1,7 +1,7 @@
 {
-  "name": "新型冠狀病毒肺炎（武漢肺炎）感染即時資訊",
-  "short_name": "武漢肺炎感染資訊",
-  "description": "取得新型冠狀病毒肺炎（武漢肺炎）感染的確診、疑似、治癒及死亡案例數目。",
+  "name": "新型冠狀病毒肺炎（COVID-19）感染即時資訊",
+  "short_name": "新冠肺炎感染資訊",
+  "description": "取得新型冠狀病毒肺炎（COVID-19）感染的確診、疑似、治癒及死亡案例數目。",
   "start_url": "./",
   "display": "standalone",
   "background_color": "#ffffff",

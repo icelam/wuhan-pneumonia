@@ -3,7 +3,7 @@
     <div class="container">
       <!-- Logo -->
       <router-link :to="appRoutes.home" v-on:click.native="closeNav">
-        <img src="~@images/logo/logo.svg" class="logo" alt="武漢肺炎感染即時資訊"/>
+        <img src="~@images/logo/logo.svg" class="logo" alt="新冠炎感染即時資訊"/>
       </router-link>
       <!-- /Logo -->
 
